@@ -7,8 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Cinema project</title>
-    <link rel="icon" type="image/png" href="images/favicon.png" />
-    <link rel="stylesheet" type="text/css" href="build/style.css" />
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
@@ -64,88 +63,121 @@
             </tr>
         </table>
     </div>
-    
-    <h3>Выберите фильм</h3>
-    <table>
-        <tr>
-            <th>Начало сеанса</th>
-            <th>Название фильма</th>
-            <th>Жанр</th>
-        </tr>
-        <tr>
-            <th>10:00</th>
-            <th>Человек-паук</th>
-            <th>фантастика, боевик, приключения</th>
-        </tr>
-        <tr>
-            <th>12:00</th>
-            <th>Собачья жизнь 2</th>
-            <th>фэнтези, драма, комедия</th>
-            </tr>
-        <tr>
-            <th>14:00</th>
-            <th>История игрушек 4</th>
-            <th>мультфильм, фэнтези, комедия</th>
-        </tr>
-        <tr>
-            <th>16:00</th>
-            <th>Люди в черном: Интернэшнл</th>
-            <th>фантастика, боевик, комедия</th>
-        </tr>
-    </table>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eum facere obcaecati quam rem repellendus veritatis. Aliquam beatae, delectus dignissimos enim exercitationem mollitia nisi pariatur quaerat quam, qui quibusdam sunt!</p>
-    
-    <div>
-        <img src="img/b4_img.jpg" alt="">
-        <div>   
-            <h3>Подарок каждому!</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi expedita libero mollitia nesciunt nihil nobis obcaecati quasi ratione reprehenderit sequi sint, tenetur unde velit veniam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi expedita libero mollitia nesciunt nihil nobis obcaecati quasi ratione reprehenderit sequi sint, tenetur unde velit veniam!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi expedita libero mollitia nesciunt nihil nobis obcaecati quasi ratione reprehenderit sequi sint, tenetur unde velit veniam!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi expedita libero mollitia nesciunt nihil nobis obcaecati quasi ratione reprehenderit sequi sint, tenetur unde velit veniam!</p>
-            <a href="#">Получить подарок</a>
+    <div class="movie-list">
+        <h3 class="movie-list__header">
+            Выберите фильм
+        </h3>
+        <div class="container">
+            <table class="movie-list__table">
+                <thead>
+                    <tr>
+                        <th id="t1">Time</th>
+                        <th id="t2">Stuff that will happen</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="noteven">
+                        <td id="td1">10am - 12pm</td>
+                        <td>Introduction and presentation about Envato</td>
+                        <td id="t3"><svg 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="33px" height="33px">
+                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                            d="M16.505,32.994 C7.393,32.994 0.005,25.606 0.005,16.494 C0.005,7.381 7.393,-0.006 16.505,-0.006 C25.618,-0.006 33.005,7.381 33.005,16.494 C33.005,25.606 25.618,32.994 16.505,32.994 ZM24.214,14.591 L18.356,14.631 L18.356,8.796 L13.958,8.778 L13.958,14.637 L8.083,14.637 L8.083,19.074 L13.958,19.074 L13.958,24.889 L18.336,24.889 L18.307,19.074 L24.231,19.074 L24.214,14.591 Z"/>
+                        </svg></td>
+                    </tr>
+                    <tr class="even">
+                        <td id="td1">12pm - 02pm</td>
+                        <td>Sessions by honorable guests and Speakers</td>
+                        <td><svg 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="33px" height="33px">
+                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                            d="M16.505,32.994 C7.393,32.994 0.005,25.606 0.005,16.494 C0.005,7.381 7.393,-0.006 16.505,-0.006 C25.618,-0.006 33.005,7.381 33.005,16.494 C33.005,25.606 25.618,32.994 16.505,32.994 ZM24.214,14.591 L18.356,14.631 L18.356,8.796 L13.958,8.778 L13.958,14.637 L8.083,14.637 L8.083,19.074 L13.958,19.074 L13.958,24.889 L18.336,24.889 L18.307,19.074 L24.231,19.074 L24.214,14.591 Z"/>
+                        </svg></td>
+                        </tr>
+                    <tr class="noteven">
+                        <td id="td1">02pm - 03pm</td>
+                        <td>Break and Mingle time with the authors</td>
+                        <td><svg 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="33px" height="33px">
+                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                            d="M16.505,32.994 C7.393,32.994 0.005,25.606 0.005,16.494 C0.005,7.381 7.393,-0.006 16.505,-0.006 C25.618,-0.006 33.005,7.381 33.005,16.494 C33.005,25.606 25.618,32.994 16.505,32.994 ZM24.214,14.591 L18.356,14.631 L18.356,8.796 L13.958,8.778 L13.958,14.637 L8.083,14.637 L8.083,19.074 L13.958,19.074 L13.958,24.889 L18.336,24.889 L18.307,19.074 L24.231,19.074 L24.214,14.591 Z"/>
+                        </svg></td>
+                    </tr>
+                    <tr class="even">
+                        <td id="td1">03pm - 05pm</td>
+                        <td>Portfolio Review, Rewards and Ending Presentation</td>
+                        <td><svg 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="33px" height="33px">
+                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                            d="M16.505,32.994 C7.393,32.994 0.005,25.606 0.005,16.494 C0.005,7.381 7.393,-0.006 16.505,-0.006 C25.618,-0.006 33.005,7.381 33.005,16.494 C33.005,25.606 25.618,32.994 16.505,32.994 ZM24.214,14.591 L18.356,14.631 L18.356,8.796 L13.958,8.778 L13.958,14.637 L8.083,14.637 L8.083,19.074 L13.958,19.074 L13.958,24.889 L18.336,24.889 L18.307,19.074 L24.231,19.074 L24.214,14.591 Z"/>
+                        </svg></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-    <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eum facere obcaecati quam rem repellendus veritatis. Aliquam beatae, delectus dignissimos enim exercitationem mollitia nisi pariatur quaerat quam, qui quibusdam sunt!</p>
+        
         <div>
-            <h1>Фильмы</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias, animi, commodi eius ipsum, laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae, suscipit!</p>    
+            <img src="img/b4_img.jpg" alt="">
+            <div>   
+                <h3>Подарок каждому!</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi expedita libero mollitia nesciunt nihil nobis obcaecati quasi ratione reprehenderit sequi sint, tenetur unde velit veniam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi expedita libero mollitia nesciunt nihil nobis obcaecati quasi ratione reprehenderit sequi sint, tenetur unde velit veniam!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi expedita libero mollitia nesciunt nihil nobis obcaecati quasi ratione reprehenderit sequi sint, tenetur unde velit veniam!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi expedita libero mollitia nesciunt nihil nobis obcaecati quasi ratione reprehenderit sequi sint, tenetur unde velit veniam!</p>
+                <a href="#">Получить подарок</a>
+            </div>
         </div>
-        <table>
-            <tr>
-                <td>
-                    <a href="https://www.kinopoisk.ru/film/chelovek-pauk-2002-838/" target="_blank">
-                    <img src="img/mov1.jpg" alt="">
-                    </a>
-                </td>
-                <td>
-                    <a href="https://www.kinopoisk.ru/film/1122114/" target="_blank">    
-                    <img src="img/mov2.jpg" alt="">
-                    </a>
-                </td>
-                <td>
-                    <a href="https://www.kinopoisk.ru/film/693730/" target="_blank">
-                    <img src="img/mov3.jpg" alt="">
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="https://www.kinopoisk.ru/film/chelovek-pauk-2002-838/" target="_blank">
-                    <img src="img/mov1.jpg" alt="">
-                    </a>
-                </td>
-                <td>
-                    <a href="https://www.kinopoisk.ru/film/1122114/" target="_blank">    
-                    <img src="img/mov2.jpg" alt="">
-                    </a>
-                </td>
-                <td>
-                    <a href="https://www.kinopoisk.ru/film/693730/" target="_blank">
-                    <img src="img/mov3.jpg" alt="">
-                    </a>
-                </td>
-            </tr>
-        </table>
+        <div>
+            <div>
+                <h4>Фильмы</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias, animi, commodi eius ipsum, laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae, suscipit!</p>    
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        <a href="https://www.kinopoisk.ru/film/chelovek-pauk-2002-838/" target="_blank">
+                        <img src="img/mov1.jpg" alt="">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://www.kinopoisk.ru/film/1122114/" target="_blank">    
+                        <img src="img/mov2.jpg" alt="">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://www.kinopoisk.ru/film/693730/" target="_blank">
+                        <img src="img/mov3.jpg" alt="">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://www.kinopoisk.ru/film/chelovek-pauk-2002-838/" target="_blank">
+                        <img src="img/mov1.jpg" alt="">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://www.kinopoisk.ru/film/1122114/" target="_blank">    
+                        <img src="img/mov2.jpg" alt="">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://www.kinopoisk.ru/film/693730/" target="_blank">
+                        <img src="img/mov3.jpg" alt="">
+                        </a>
+                    </td>
+                </tr>
+            </table>
     </div>
 
     <!-- FOOTER -->
