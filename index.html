@@ -19,9 +19,9 @@
             <img src="img/logo.png" alt="">
             </a>
         </span>
-            <a href="#">ЗАКАЗАТЬ БИЛЕТ </a>
+            <a href="#buy">ЗАКАЗАТЬ БИЛЕТ </a>
             <a href="#">ПРЕИМУЩЕСТВА </a>
-            <a href="#">ФИЛЬМЫ </a>
+            <a href="#films">ФИЛЬМЫ </a>
             <a href="#">КОНТАКТЫ </a>
             <span>Ваш город:</span>
             <a href="#">Москва</a> 
@@ -63,6 +63,8 @@
             </tr>
         </table>
     </div>
+
+    <p><a name="films"></a></p>
     <div class="movie-list">
         <h3 class="movie-list__header">
             Выберите фильм
@@ -177,8 +179,72 @@
                         </a>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <a href="https://www.kinopoisk.ru/film/chelovek-pauk-2002-838/" target="_blank">
+                        <img src="img/mov1.jpg" alt="">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://www.kinopoisk.ru/film/1122114/" target="_blank">    
+                        <img src="img/mov2.jpg" alt="">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://www.kinopoisk.ru/film/693730/" target="_blank">
+                        <img src="img/mov3.jpg" alt="">
+                        </a>
+                    </td>
+                </tr>
             </table>
     </div>
+    
+    <p><a name="buy"></a></p>
+    <form action="/order.php">
+        <div>
+            <input name="client_name" placeholder="Введите имя" required>
+        </div>
+        <div>
+            <input name="client_email" placeholder="Введите e-mail" required>
+        </div>
+        <div>
+            <textarea placeholder="Комментарий"></textarea>
+        </div>
+        <div>
+            <label for="first">Ряд 1</label>
+            <input id="first" type="radio" value="1">
+            <label for="second">Ряд 2</label>
+            <input id="second" type="radio" value="2">
+            <label for="third">Ряд 3</label>
+            <input id="third" type="radio" value="3">
+        </div>
+        <div>
+            <select required>
+                <option>Выберете место</option>
+                <option value="1">Место 1</option>
+                <option value="2">Место 2</option>
+                <option value="3">Место 3</option>
+                <option value="4">Место 4</option>
+                <option value="5">Место 5</option>
+                <option value="6">Место 6</option>
+                <option value="7">Место 7</option>
+                <option value="8">Место 8</option>
+                <option value="9">Место 9</option>
+                <option value="10">Место 10</option>
+            </select>
+        </div>
+        <div>
+            <label>Скидка:</label>
+            <input type="file" name="promo">
+        </div>
+        <div>
+            <input id="agreement" name="agree" type="checkbox" required>
+            <label for="agreement">Согласие на обработку персональных данных</label>
+        </div>
+        <div>
+            <button type="submit">Заказать</button>
+        </div>
+    </form>    
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -186,8 +252,7 @@
             <a href="#" id="scrollTo-myCarousel">Back to top</a>
         </p>
     </footer>
-    <!--EXAMPLE PAGE ENDS-->
-    <script src="build/bundle.js"></script>
+    
 </body>
 
 </html>
