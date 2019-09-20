@@ -1,4 +1,4 @@
-body, p, h1, h2, h3, h4{
+body, a, p, h1, h2, h3, h4{
 background: transparent;
 border: 0;
 margin: 0;
@@ -8,29 +8,25 @@ text-decoration: none;
 box-sizing: border-box;
 font-family: 'Roboto', sans-serif;
 }
-@font-face{
-    font-family: 'Roboto';
-    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
-    font-weight: 400;
-}
-@font-face{
-    font-family: 'Roboto';
-    src: url('../fonts/Roboto-Bold.ttf') format('truetype');
-    font-weight: 700;
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap&subset=cyrillic');
+
 .movie-list{
     padding: 100px 0;
 }
 .movie-list__header{
-font-size: 50px;
-color: #252525;
-font-weight: 700;
-margin: 0 0 77px;
-text-align: center;
+    font-size: 46px;
+    color: #252525;
+    font-weight: 700;
+    margin: 0 0 80px;
+    text-align: center;
 }
 .container{
-max-width: 1030px;
-margin: 0 auto;
+    max-width: 1030px;
+    margin: 0 auto;
+    color: #fff;
+}
+a:visited {
+    color: inherit;
 }
 .movie-list__table{
     width: 100%;
@@ -39,37 +35,48 @@ margin: 0 auto;
     overflow: hidden;
 }
 .movie-list__table th{
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 700;
-    color: #fff;
     background: #a3cc40;
-    padding: 19px 0;
+    padding: 22px 0;
 }  
 .movie-list__table td{
     font-size: 22px;
     font-weight: 400;
-    color: #fff;
     padding: 18px 0;
+    vertical-align: top;
 }  
-.movie-list__table tr.even {
-    background: #4b4d4f;
-}  
-.movie-list__table tr.noteven {
+.container tr:nth-child(2n+1){
     background: #373737;
 }
-#t1 {
-    text-align: left;
-    padding: 19px 0 19px 80px;
+.container tr:nth-child(2n){
+    background: #4b4d4f;
 }
-#td1 {
-    text-align: left;
-    padding: 18px 0 18px 47px;
+.container tr:nth-child(3n){
+    background: #6c6c6c;
 }
-#t2 {
-    text-align: left;
-    width: 649px;
+.triangle-up{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 9px 15px 9px;
+    border-color: transparent transparent #ffffff transparent;
+    display: inline-block;
 }
-#t3 {
-    text-align: left;
+.triangle-down{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 9px 0 9px;
+    border-color: #ffffff transparent transparent transparent;
+    display: inline-block;
+}
+.col-1 {
+    width: 230px;
+}
+.col-4 {
     width: 84px;
+}
+.centr {
+    text-align: center;
 }
