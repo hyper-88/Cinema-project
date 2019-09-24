@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap&subset=cyrillic');
+
 body, a, p, h1, h2, h3, h4{
 background: transparent;
 border: 0;
@@ -8,8 +10,6 @@ text-decoration: none;
 box-sizing: border-box;
 font-family: 'Roboto', sans-serif;
 }
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap&subset=cyrillic');
-
 .movie-list{
     padding: 100px 0;
 }
@@ -24,6 +24,9 @@ font-family: 'Roboto', sans-serif;
     max-width: 1030px;
     margin: 0 auto;
     color: #fff;
+}
+a:link{
+    color: inherit;
 }
 a:visited {
     color: inherit;
