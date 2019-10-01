@@ -246,7 +246,7 @@ a:visited {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #000;
-    padding-top: 50px;
+    padding-top: 47px;
     padding-bottom: 392px;
 
     position: relative;
@@ -266,13 +266,14 @@ a:visited {
     left: 0;
 }
 .block-01__logo{
-    float: left;
-    margin-left: 170px;
-    margin-right: 259px;
+    display: inline-block;
+    margin-left: 169px;
+    margin-right: 256px;
 }
 .block-01 header ul{
+    display: inline-block;
     text-transform: uppercase;
-    padding-top: 16px;
+    padding-top: 18px;
     font-size: 15px;
 }
 .block-01 header{
@@ -289,7 +290,7 @@ a:visited {
 .block-01 h1{
     font-weight: 200;
     font-size: 81px;
-    padding-top: 177px;
+    padding-top: 162px;
     text-align: center;
     padding-left: 7px;
 }
