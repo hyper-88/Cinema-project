@@ -246,7 +246,7 @@ a:visited {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #000;
-    padding-top: 47px;
+    padding-top: 50px;
     padding-bottom: 392px;
 
     position: relative;
@@ -266,14 +266,13 @@ a:visited {
     left: 0;
 }
 .block-01__logo{
-    display: inline-block;
+    float: left;
     margin-left: 169px;
-    margin-right: 256px;
+    margin-right: 259px;
 }
 .block-01 header ul{
-    display: inline-block;
     text-transform: uppercase;
-    padding-top: 18px;
+    padding-top: 16px;
     font-size: 15px;
 }
 .block-01 header{
@@ -281,16 +280,17 @@ a:visited {
     margin: auto;
 }
 .block-01 header ul li{
-    display: inline-block;
-    padding-right: 37px;
+    float: left;
+    padding-right: 41px;
 }
 .block-01 header ul li a:hover{
     color: #90d23d;
+    border-bottom: 1px solid #90d23d;
 }
 .block-01 h1{
     font-weight: 200;
     font-size: 81px;
-    padding-top: 162px;
+    padding-top: 192px;
     text-align: center;
     padding-left: 7px;
 }
@@ -303,26 +303,25 @@ a:visited {
 
 
 /*ПРЕИМУЩЕСТВА*/
-.block-02__row{
-    width: 1030px;
+.block-02{
+    width: 1100px;
     margin: auto;
+}
+.block-02__row{
     margin-top: 51px;
     overflow: hidden;
 }
 .block-02__row h2{
     font-weight: bold;
     font-size: 50px;
-    padding-left: 2px;
+    padding-left: 36px;
     margin-bottom: 85px;
 }
 .block-02__col{
     float: left;
-    width: 29%;
+    width: 33.33%;
     text-align: center;
-    margin-right: 66px;
-}
-.block-02__col:last-of-type{
-    margin-right: 0px;
+    margin: auto;
 }
 .block-02__image-wrap{
     height: 210px;
@@ -338,6 +337,9 @@ a:visited {
     margin: auto;
     margin-bottom: 0px;
 }
+.block-02__image-wrap img:hover{
+    transform: scale(1.07);
+}
 .block-02__col h3{
     font-weight: bold;
     font-size: 35px;
@@ -347,6 +349,7 @@ a:visited {
     font-weight: 300;
     font-size: 14px;
     line-height: 1.2;
+    padding: 0 33px;
 }
 .block-02__info-wrap{
     width: 1030px;
@@ -359,8 +362,8 @@ a:visited {
     padding: 36px 29px 25px;
     background: #fff;
     box-shadow: 0px 1px	 2px 0px rgba(35, 31, 32, 0.65);
-    top: -157px;
-    right: -3px;
+    top: -208px;
+    right: -2px;
     z-index: 1;
 }
 .block-02__info h2{
@@ -381,49 +384,49 @@ a:visited {
 }
 
 /*ТАБЛИЦА С СЕАНСАМИ*/
-.movie-list{
+.block-03{
     padding-top: 124px;
 }
-.movie-list__header{
+.block-03__header{
     font-size: 50px;
     color: #252525;
     font-weight: 700;
     margin: 0 0 82px;
     text-align: center;
 }
-.container{
+.block-03__container{
     max-width: 1030px;
     margin: 0 auto;
     color: #fff;
 }
-.movie-list__table{
+.block-03__table{
     width: 100%;
     border-collapse: collapse;
     border-radius: 15px;
     overflow: hidden;
 }
-.movie-list__table th{
+.block-03__table th{
     font-size: 26px;
     font-weight: 700;
     background: #a3cc40;
     padding: 24px 0;
 }  
-.movie-list__table td{
+.block-03__table td{
     font-size: 22px;
     font-weight: 400;
     padding: 27px 0 11px 0;
     vertical-align: top;
 }  
-.container tr:nth-child(2n+1){
+.block-03__container tr:nth-child(2n+1){
     background: #373737;
 }
-.container tr:nth-child(2n){
+.block-03__container tr:nth-child(2n){
     background: #4b4d4f;
 }
-.container tr:nth-child(3n){
+.block-03__container tr:nth-child(3n){
     background: #6c6c6c;
 }
-.triangle-up{
+.block-03__triangle-up{
     width: 0;
     height: 0;
     border-style: solid;
@@ -431,7 +434,7 @@ a:visited {
     border-color: transparent transparent #ffffff transparent;
     display: inline-block;
 }
-.triangle-down{
+.block-03__triangle-down{
     width: 0;
     height: 0;
     border-style: solid;
@@ -439,22 +442,22 @@ a:visited {
     border-color: #ffffff transparent transparent transparent;
     display: inline-block;
 }
-.movie-list__table_colsize-1 {
+.block-03__table_colsize-1 {
     width: 255px;
 }
-.movie-list__table_colsize-4 {
+.block-03__table_colsize-4 {
     width: 84px;
 }
-.centr {
+.block-03__table_centr {
     text-align: center;
 }
-.container table thead th:nth-child(2) {
+.block-03__container table thead th:nth-child(2) {
     text-align: left;
 }
-.container table tbody tr td:nth-child(4) {
+.block-03__container table tbody tr td:nth-child(4) {
     text-align: center;
 }
-.movie-list__text{
+.block-03__text{
     font-weight: 300;
     font-size: 14px;
     line-height: 1.2;
@@ -466,48 +469,53 @@ a:visited {
 
 /*ПОДАРОК*/
 .block-04{
+    margin-top: 126px;
+}
+.block-04__back{
     background: url(../img/Block04.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #000;
-    padding-top: 121px;
-    padding-bottom: 193px;
+    padding-top: 145px;
+    padding-bottom: 216px;
 
     position: relative;
     margin: auto;
-    margin-top: 149px;
-    width: 1366px;
+    
     overflow: hidden;
-
+}
+.block-04__container{
+    width: 1366px;
     color: #fff;
     text-align: right;
+    margin: auto;
 }
-.block-04::before {
+.block-04__back::before {
     content: '';
     position: absolute;
     width: 120%;
     height: 200px;
     transform: rotate(-5deg);
     background: #fff;
-    top: -149px;
+    top: -131px;
     left: -20px;
 }
-.block-04:after {
+.block-04__back:after {
     content: '';
     position: absolute;
     width: 120%;
     height: 250px;
     transform: rotate(-5deg);
     background: #fff;
-    bottom: -178px;
+    bottom: -150px;
     left: 0;
 }
 .block-04__text{
     padding-top: 19px;
     padding-left: 537px;
-    margin-bottom: 38px;
-    width: 665px;
+    margin-bottom: 37px;
+    width: 666px;
 }
 .block-04__text h3{
     font-size: 50px;
@@ -549,42 +557,119 @@ a:visited {
     border-radius: 100%;
     box-shadow: 10.5px 18.187px 12px 0px rgba(35, 31, 32, 0.55);
     overflow: hidden;
-    top: 84px;
+    top: -42px;
     right: 699px;
     z-index: 1;
 }
 
 /*ФИЛЬМЫ*/
 .block-05{
-    width: 970px;
+    width: 1011px;
     margin: auto;
-    margin-top: 88px;
+    margin-top: 64px;
 }
-.block-05 h4{
+.block-05__text{
+    padding-left: 22px;
+    margin-bottom: 58px;
+}
+.block-05__text h4{
     font-weight: bold;
     font-size: 50px;
 }
-.block-05 p{
+.block-05__text p{
     font-weight: 300;
-    font-size: 14px;
+    font-size: 14.1px;
     line-height: 1.15;
     padding-top: 41px;
 }
 .block-05__row{
     margin: auto;
-    margin-top: 77px;
+    overflow: hidden;
 }
 .block-05__col{
+    position: relative;
     float: left;
     width: 296px;
     height: 296px;
     overflow: hidden;
     text-align: left;
-    margin-right: 41px;
-    margin-bottom: 41px;
+    margin: 20.5px;
 }
-.block-05__col:last-of-type{
-    margin-right: 0px;
+.block-05__slide-block{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -296px;
+    width: 296px;
+    height: 296px;
+    background-color: rgb(144, 210, 61, 0.8);
+    border-radius: 15px;
+    box-sizing: border-box;
+    transition: 0.3s;
+
+    padding-left: 24px;
+    padding-top: 23px;
+}
+.block-05__col:hover .block-05__slide-block{
+    bottom: 0;
+}
+.block-05__slide-container{
+    height: 218px;
+}
+.block-05__slide-text{
+    font-size: 35px;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0 0 12px;
+}
+.block-05__slide-block hr{
+    width: 83px;
+    height: 6px;
+    border: 0;
+    box-shadow: none;
+    margin: 0 0 14px;
+    background: #fff;
+}
+.block-05__slide-block p{
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 21px;
+    letter-spacing: 0.2px;
+}
+.block-05__links{
+    padding-left: 10px;
+}
+.block-05__links a{
+    padding-right: 1px;
 }
 
-/*
+
+/*FOOTER*/
+.block-06{
+    width: 1368px;
+    margin: auto;
+}
+.block-06__map{
+    width: 1368px;
+    margin-top: 81px;
+}
+.block-06__links{
+    background: #90d23d;
+    margin: auto;
+    text-align: center;
+    padding-top: 60px;
+}
+.block-06__links a{
+    padding: 0 4px;
+}
+.block-06__links p{
+    font-weight: 300;
+    font-size: 18px;
+    color: #fff;
+    padding-top: 25px;
+    line-height: 1.2;
+    padding-bottom: 40px;
+}
+
+
+
