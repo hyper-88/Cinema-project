@@ -307,35 +307,30 @@ a:visited {
     width: 1100px;
     margin: auto;
 }
-.block-02__row{
+.block-02__container{
     margin-top: 51px;
     overflow: hidden;
 }
-.block-02__row h2{
+.block-02__container h2{
     font-weight: bold;
     font-size: 50px;
     padding-left: 36px;
     margin-bottom: 85px;
 }
+.block-02__row{
+    display: flex;
+}
 .block-02__col{
-    float: left;
-    width: 33.33%;
-    text-align: center;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 .block-02__image-wrap{
-    height: 210px;
-    position: relative;
-    margin: 40px;
-}
-.block-02__image-wrap img{
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    margin-bottom: 0px;
+    display: flex;
+    align-self: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    flex: 0 0 248px;
 }
 .block-02__image-wrap img:hover{
     transform: scale(1.07);
@@ -343,13 +338,23 @@ a:visited {
 .block-02__col h3{
     font-weight: bold;
     font-size: 35px;
-    padding-bottom: 21px;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-basis: 77px;
 }
 .block-02__col p{
     font-weight: 300;
     font-size: 14px;
     line-height: 1.2;
     padding: 0 33px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: flex-end;
+    flex-basis: 88px;
+    text-align: center;
 }
 .block-02__info-wrap{
     width: 1030px;
@@ -583,12 +588,12 @@ a:visited {
     padding-top: 41px;
 }
 .block-05__row{
+    display: flex;
     margin: auto;
     overflow: hidden;
 }
 .block-05__col{
     position: relative;
-    float: left;
     width: 296px;
     height: 296px;
     overflow: hidden;
@@ -606,15 +611,14 @@ a:visited {
     border-radius: 15px;
     box-sizing: border-box;
     transition: 0.3s;
+    display: flex;
+    flex-direction: column;
 
     padding-left: 24px;
     padding-top: 23px;
 }
 .block-05__col:hover .block-05__slide-block{
     bottom: 0;
-}
-.block-05__slide-container{
-    height: 218px;
 }
 .block-05__slide-text{
     font-size: 35px;
@@ -635,9 +639,11 @@ a:visited {
     color: #ffffff;
     line-height: 21px;
     letter-spacing: 0.2px;
+    flex: 1;
 }
 .block-05__links{
     padding-left: 10px;
+    margin-bottom: 18px;
 }
 .block-05__links a{
     padding-right: 1px;
