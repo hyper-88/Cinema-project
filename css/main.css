@@ -569,13 +569,12 @@ a:visited {
 
 /*ФИЛЬМЫ*/
 .block-05{
-    width: 1011px;
+    width: 970px;
     margin: auto;
     margin-top: 64px;
 }
 .block-05__text{
-    padding-left: 22px;
-    margin-bottom: 58px;
+    margin-bottom: 78px;
 }
 .block-05__text h4{
     font-weight: bold;
@@ -588,9 +587,11 @@ a:visited {
     padding-top: 41px;
 }
 .block-05__row{
-    display: flex;
-    margin: auto;
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 41px;
+    grid-row-gap: 41px;
+    
 }
 .block-05__col{
     position: relative;
@@ -598,7 +599,6 @@ a:visited {
     height: 296px;
     overflow: hidden;
     text-align: left;
-    margin: 20.5px;
 }
 .block-05__slide-block{
     position: absolute;
@@ -648,7 +648,10 @@ a:visited {
 .block-05__links a{
     padding-right: 1px;
 }
-
+.block-05__empty{
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+}
 
 /*FOOTER*/
 .block-06{
