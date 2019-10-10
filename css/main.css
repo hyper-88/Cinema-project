@@ -266,7 +266,7 @@ a:visited {
 .block-01__logo{
     float: left;
     margin-left: 169px;
-    margin-right: 259px;
+    margin-right: 147px;
 }
 .block-01 header ul{
     text-transform: uppercase;
@@ -279,7 +279,10 @@ a:visited {
 }
 .block-01 header ul li{
     float: left;
-    padding-right: 41px;
+    padding-right: 35px;
+}
+.block-01 header ul li:nth-child(5){
+    padding-right: 3px;
 }
 .block-01 header ul li a:hover{
     color: #90d23d;
