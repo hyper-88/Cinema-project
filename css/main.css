@@ -241,13 +241,13 @@ a:visited {
 
 /*ШАПКА*/
 .block-01 {
-    background: url(../img/Block01.jpg);
+    background: linear-gradient( rgba(32, 32, 32, 0.8), rgba(0, 0, 0, 0.5) ), url(../img/Block01.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #000;
-    padding-top: 50px;
-    padding-bottom: 392px;
+    padding-top: 56px;
+    padding-bottom: 389px;
 
     position: relative;
     margin: auto;
@@ -258,12 +258,10 @@ a:visited {
 .block-01:after {
     content: '';
     position: absolute;
-    width: 120%;
-    height: 250px;
-    transform: rotate(-5deg);
-    background: #fff;
-    bottom: -148px;
+    bottom: 0px;
     left: 0;
+    border-left: 100vw solid transparent;
+    border-bottom: 10.55rem solid white;
 }
 .block-01__logo{
     float: left;
@@ -308,7 +306,7 @@ a:visited {
     margin: auto;
 }
 .block-02__container{
-    margin-top: 51px;
+    margin-top: 54px;
     overflow: hidden;
 }
 .block-02__container h2{
@@ -477,7 +475,7 @@ a:visited {
     margin-top: 126px;
 }
 .block-04__back{
-    background: url(../img/Block04.jpg);
+    background: linear-gradient( rgba(32, 32, 32, 0.8), rgba(0, 0, 0, 0.5) ), url(../img/Block04.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -499,22 +497,18 @@ a:visited {
 .block-04__back::before {
     content: '';
     position: absolute;
-    width: 120%;
-    height: 200px;
-    transform: rotate(-5deg);
-    background: #fff;
-    top: -131px;
-    left: -20px;
+    top: 0px;
+    left: 0px;
+    border-right: 100vw solid transparent;
+    border-top: 10.55rem solid white;
 }
 .block-04__back:after {
     content: '';
     position: absolute;
-    width: 120%;
-    height: 250px;
-    transform: rotate(-5deg);
-    background: #fff;
-    bottom: -150px;
+    bottom: 0px;
     left: 0;
+    border-left: 100vw solid transparent;
+    border-bottom: 10.55rem solid white;
 }
 .block-04__text{
     padding-top: 19px;
@@ -538,12 +532,17 @@ a:visited {
 .block-04 a{
     border-radius: 15px;
     background-color: rgb(144, 210, 61);
-    border:none;
-    padding: 17px 32px;
+    border: 2px solid rgb(144, 210, 61);;
+    padding: 14px 30px;
     margin-right: 166px;
     color: #fff;
     font-weight: normal;
     font-size: 18px;
+    transition: 0.2s;
+}
+.block-04 a:hover{
+    border: 2px solid rgb(144, 210, 61);
+    background-color: transparent;
 }
 .block-04__image-wrap{
     width: 1030px;
@@ -599,6 +598,7 @@ a:visited {
     height: 296px;
     overflow: hidden;
     text-align: left;
+    border-radius: 15px;
 }
 .block-05__slide-block{
     position: absolute;
@@ -648,19 +648,18 @@ a:visited {
 .block-05__links a{
     padding-right: 1px;
 }
-.block-05__empty{
+/* .block-05__empty{
     grid-row: 2 / 3;
     grid-column: 2 / 3;
-}
+} */
 
 /*FOOTER*/
 .block-06{
-    width: 1368px;
     margin: auto;
 }
 .block-06__map{
-    width: 1368px;
-    margin-top: 81px;
+    width: 100%;
+    margin-top: 102px;
 }
 .block-06__links{
     background: #90d23d;
