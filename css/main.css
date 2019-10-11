@@ -259,8 +259,8 @@ a:visited {
     position: relative;
     margin: auto;
     overflow: hidden;
-
     color: #fff;
+    min-height: 100vh;
 }
 .block-01:after {
     content: '';
@@ -428,12 +428,14 @@ a:visited {
     border-collapse: collapse;
     border-radius: 0.75rem;
     overflow: hidden;
+    height: 80vh;
 }
 .block-03__table th{
     font-size: 1.3rem;
     font-weight: 700;
     background: #a3cc40;
     padding: 1.2rem 0;
+    vertical-align: middle;
 }  
 .block-03__table td{
     font-size: 1.1rem;
