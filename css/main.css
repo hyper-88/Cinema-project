@@ -144,8 +144,15 @@ body, a, p, h1, h2, h3, h4{
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+html{
+    font-size: 1.04vw;
+}
+body{
+    min-width: 320px;
+    -webkit-text-size-adjust: 100%;
+}
 form {
-    width: 400px;
+    width: 20rem;
 }
 input, textarea, select {
     font-size: 19px;
@@ -241,13 +248,13 @@ a:visited {
 
 /*ШАПКА*/
 .block-01 {
-    background: linear-gradient( rgba(32, 32, 32, 0.8), rgba(0, 0, 0, 0.5) ), url(../img/Block01.jpg);
+    background: linear-gradient( rgba(37, 37, 37, 0.8), rgba(27, 9, 9, 0.5) ), url(../img/Block01.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #000;
-    padding-top: 56px;
-    padding-bottom: 389px;
+    padding-top: 2.8rem;
+    padding-bottom: 19.45rem;
 
     position: relative;
     margin: auto;
@@ -258,31 +265,37 @@ a:visited {
 .block-01:after {
     content: '';
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     left: 0;
     border-left: 100vw solid transparent;
-    border-bottom: 10.55rem solid white;
+    border-bottom: 8.3rem solid white;
 }
 .block-01__logo{
     float: left;
-    margin-left: 169px;
-    margin-right: 147px;
+    margin-left: 8.45rem;
+    margin-right: 6.15rem;
+    width: 9.4rem;
+}
+.block-01__logo img{
+    width: 100%;
 }
 .block-01 header ul{
     text-transform: uppercase;
-    padding-top: 16px;
-    font-size: 15px;
+    padding-top: 0.8rem;
+    font-size: 0.75rem;
 }
 .block-01 header{
-    width: 1367px;
+    width: 68.35rem;
     margin: auto;
 }
 .block-01 header ul li{
     float: left;
-    padding-right: 35px;
+    padding-right: 1.35rem;
 }
 .block-01 header ul li:nth-child(5){
-    padding-right: 3px;
+    padding-right: 0.15rem;
+    text-transform: none;
+    padding-left: 3.5rem;
 }
 .block-01 header ul li a:hover{
     color: #90d23d;
@@ -290,33 +303,33 @@ a:visited {
 }
 .block-01 h1{
     font-weight: 200;
-    font-size: 81px;
-    padding-top: 192px;
+    font-size: 4.05rem;
+    padding-top: 9.6rem;
     text-align: center;
-    padding-left: 7px;
+    padding-left: 0.35rem;
 }
 .block-01 h2{
-    font-size: 50.5px;
-    padding-top: 10px;
+    font-size: 2.53rem;
+    padding-top: 0.5rem;
     text-align: center;
-    padding-left: 5px;
+    padding-left: 0.25rem;
 }
 
 
 /*ПРЕИМУЩЕСТВА*/
 .block-02{
-    width: 1100px;
+    width: 55rem;
     margin: auto;
 }
 .block-02__container{
-    margin-top: 54px;
+    margin-top: 2.7rem;
     overflow: hidden;
 }
 .block-02__container h2{
     font-weight: bold;
-    font-size: 50px;
-    padding-left: 36px;
-    margin-bottom: 85px;
+    font-size: 2.5rem;
+    padding-left: 1.8rem;
+    margin-bottom: 4.35rem;
 }
 .block-02__row{
     display: flex;
@@ -327,101 +340,106 @@ a:visited {
     flex: 1;
 }
 .block-02__image-wrap{
+    height: 1.55rem;
+    width: 10rem;
     display: flex;
     align-self: center;
     justify-content: flex-end;
     flex-direction: column;
-    flex: 0 0 248px;
+    flex: 0 0 12.4rem;
+}
+.block-02__image-wrap img{
+    width: 100%;
 }
 .block-02__image-wrap img:hover{
     transform: scale(1.07);
 }
 .block-02__col h3{
     font-weight: bold;
-    font-size: 35px;
+    font-size: 1.75rem;
     display: flex;
     align-self: center;
     flex-direction: column;
     justify-content: flex-end;
-    flex-basis: 77px;
+    flex-basis: 3.85rem;
 }
 .block-02__col p{
     font-weight: 300;
-    font-size: 14px;
+    font-size: 0.7rem;
     line-height: 1.2;
-    padding: 0 33px;
+    padding: 0 1.65rem;
     display: flex;
     flex-direction: column;
     align-self: center;
     justify-content: flex-end;
-    flex-basis: 88px;
+    flex-basis: 4.4rem;
     text-align: center;
 }
 .block-02__info-wrap{
-    width: 1030px;
+    width: 51.5rem;
     margin: 0 auto;
     position: relative
 }
 .block-02__info{
     position: absolute;
-    width: 458px;
-    padding: 36px 29px 25px;
+    width: 22.9rem;
+    padding: 1.8rem 1.45rem 1.25rem;
     background: #fff;
     box-shadow: 0px 1px	 2px 0px rgba(35, 31, 32, 0.65);
-    top: -208px;
-    right: -2px;
+    top: -10.4rem;
+    right: -0.1rem;
     z-index: 1;
 }
 .block-02__info h2{
     font-weight: bold;
-    font-size: 40px;
+    font-size: 2rem;
     color: #252525;
-    padding-bottom: 33px;
-    padding-left: 3px;
+    padding-bottom: 1.65rem;
+    padding-left: 0.15rem;
 }
 .block-02__info p{
     font-weight: 300;
-    font-size: 14px;
+    font-size: 0.7rem;
     color: #242424;
     line-height: 1.2;
-    width: 424px;
-    padding-bottom: 16px;
-    padding-left: 3px;
+    width: 21.2rem;
+    padding-bottom: 0.8rem;
+    padding-left: 0.15rem;
 }
 
 /*ТАБЛИЦА С СЕАНСАМИ*/
 .block-03{
-    padding-top: 124px;
+    padding-top: 6.2rem;
 }
 .block-03__header{
-    font-size: 50px;
+    font-size: 2.5rem;
     color: #252525;
     font-weight: 700;
-    margin: 0 0 82px;
+    margin: 0 0 4.1rem;
     text-align: center;
 }
 .block-03__container{
-    max-width: 1030px;
+    max-width: 51.5rem;
     margin: 0 auto;
     color: #fff;
 }
 .block-03__table{
     width: 100%;
     border-collapse: collapse;
-    border-radius: 15px;
+    border-radius: 0.75rem;
     overflow: hidden;
 }
 .block-03__table th{
-    font-size: 26px;
+    font-size: 1.3rem;
     font-weight: 700;
     background: #a3cc40;
-    padding: 24px 0;
+    padding: 1.2rem 0;
 }  
 .block-03__table td{
-    font-size: 22px;
+    font-size: 1.1rem;
     font-weight: 400;
-    padding: 27px 0 11px 0;
-    vertical-align: top;
+    padding: 0.85rem 0 0.83rem 0;
+    vertical-align: middle;
 }  
 .block-03__container tr:nth-child(2n+1){
     background: #373737;
@@ -436,7 +454,7 @@ a:visited {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 9px 15px 9px;
+    border-width: 0 0.45rem 0.75rem 0.45rem;
     border-color: transparent transparent #ffffff transparent;
     display: inline-block;
 }
@@ -444,15 +462,15 @@ a:visited {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 15px 9px 0 9px;
+    border-width: 0.75rem 0.45rem 0 0.45rem;
     border-color: #ffffff transparent transparent transparent;
     display: inline-block;
 }
 .block-03__table_colsize-1 {
-    width: 255px;
+    width: 12.75rem;
 }
 .block-03__table_colsize-4 {
-    width: 84px;
+    width: 4.2rem;
 }
 .block-03__table_centr {
     text-align: center;
@@ -465,17 +483,20 @@ a:visited {
 }
 .block-03__text{
     font-weight: 300;
-    font-size: 14px;
+    font-size: 0.7rem;
     line-height: 1.2;
-    padding-top: 39px;
+    padding-top: 1.95rem;
     text-align: center;
-    width: 831px;
+    width: 41.55rem;
     margin: auto;
+}
+.block-03 svg{
+    width: 2vw;
 }
 
 /*ПОДАРОК*/
 .block-04{
-    margin-top: 126px;
+    margin-top: 6.3rem;
 }
 .block-04__back{
     background: linear-gradient( rgba(32, 32, 32, 0.8), rgba(0, 0, 0, 0.5) ), url(../img/Block04.jpg);
@@ -483,8 +504,8 @@ a:visited {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #000;
-    padding-top: 145px;
-    padding-bottom: 216px;
+    padding-top: 7.25rem;
+    padding-bottom: 10.8rem;
 
     position: relative;
     margin: auto;
@@ -492,7 +513,7 @@ a:visited {
     overflow: hidden;
 }
 .block-04__container{
-    width: 1366px;
+    width: 68.3rem;
     color: #fff;
     text-align: right;
     margin: auto;
@@ -500,55 +521,55 @@ a:visited {
 .block-04__back::before {
     content: '';
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     border-right: 100vw solid transparent;
-    border-top: 10.55rem solid white;
+    border-top: 8.5rem solid white;
 }
 .block-04__back:after {
     content: '';
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     left: 0;
     border-left: 100vw solid transparent;
-    border-bottom: 10.55rem solid white;
+    border-bottom: 8.5rem solid white;
 }
 .block-04__text{
-    padding-top: 19px;
-    padding-left: 537px;
-    margin-bottom: 37px;
-    width: 666px;
+    padding-top: 0.95rem;
+    padding-left: 26.85rem;
+    margin-bottom: 1.75rem;
+    width: 33.35rem;
 }
 .block-04__text h3{
-    font-size: 50px;
+    font-size: 2.5rem;
     font-weight: 900;
-    padding-bottom: 60px;
+    padding-bottom: 3rem;
 }
 .block-04__text p{
     font-weight: 300;
-    font-size: 14px;
+    font-size: 0.7rem;
     line-height: 1.2;
-    padding-right: 5px;
-    padding-bottom: 17px;
+    padding-right: 0.25rem;
+    padding-bottom: 0.85rem;
 }
 
 .block-04 a{
-    border-radius: 15px;
+    border-radius: 0.75rem;
     background-color: rgb(144, 210, 61);
     border: 2px solid rgb(144, 210, 61);;
-    padding: 14px 30px;
-    margin-right: 166px;
+    padding: 0.75rem 1.5rem;
+    margin-right: 8.3rem;
     color: #fff;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 0.9rem;
     transition: 0.2s;
 }
 .block-04 a:hover{
-    border: 2px solid rgb(144, 210, 61);
+    border: 0.1rem solid rgb(144, 210, 61);
     background-color: transparent;
 }
 .block-04__image-wrap{
-    width: 1030px;
+    width: 51.5rem;
     margin: 0 auto;
     position: relative
 }
@@ -559,97 +580,103 @@ a:visited {
     background-size: cover;
     background-color: #000;
     position: absolute;
-    width: 330px;
-    height: 330px;
+    width: 16.5rem;
+    height: 16.5rem;
     border-radius: 100%;
-    box-shadow: 10.5px 18.187px 12px 0px rgba(35, 31, 32, 0.55);
+    box-shadow: 0.53rem 0.9rem 0.6rem 0 rgba(35, 31, 32, 0.55);
     overflow: hidden;
-    top: -42px;
-    right: 699px;
+    top: -2.1rem;
+    right: 35rem;
     z-index: 1;
 }
 
 /*ФИЛЬМЫ*/
 .block-05{
-    width: 970px;
+    width: 48.5rem;
     margin: auto;
-    margin-top: 64px;
+    margin-top: 3.2rem;
 }
 .block-05__text{
-    margin-bottom: 78px;
+    margin-bottom: 3.9rem;
 }
 .block-05__text h4{
     font-weight: bold;
-    font-size: 50px;
+    font-size: 2.5rem;
 }
 .block-05__text p{
     font-weight: 300;
-    font-size: 14.1px;
+    font-size: 0.705rem;
     line-height: 1.15;
-    padding-top: 41px;
+    padding-top: 2.05rem;
 }
 .block-05__row{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 41px;
-    grid-row-gap: 41px;
+    grid-column-gap: 2.05rem;
+    grid-row-gap: 2.05rem;
     
 }
 .block-05__col{
     position: relative;
-    width: 296px;
-    height: 296px;
+    width: 14.8rem;
+    height: 14.8rem;
     overflow: hidden;
     text-align: left;
-    border-radius: 15px;
+    border-radius: 0.75rem;
+}
+.block-05__col img{
+    width: 100%;
 }
 .block-05__slide-block{
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -296px;
-    width: 296px;
-    height: 296px;
+    bottom: -14.8rem;
+    width: 14.8rem;
+    height: 14.8rem;
     background-color: rgb(144, 210, 61, 0.8);
-    border-radius: 15px;
+    border-radius: 0.75rem;
     box-sizing: border-box;
     transition: 0.3s;
     display: flex;
     flex-direction: column;
 
-    padding-left: 24px;
-    padding-top: 23px;
+    padding-left: 1.2rem;
+    padding-top: 1.15rem;
 }
 .block-05__col:hover .block-05__slide-block{
     bottom: 0;
 }
 .block-05__slide-text{
-    font-size: 35px;
+    font-size: 1.75rem;
     font-weight: 900;
     color: #ffffff;
-    margin: 0 0 12px;
+    margin: 0 0 0.6rem;
 }
 .block-05__slide-block hr{
-    width: 83px;
-    height: 6px;
+    width: 4.15rem;
+    height: 0.3rem;
     border: 0;
     box-shadow: none;
-    margin: 0 0 14px;
+    margin: 0 0 0.7rem;
     background: #fff;
 }
 .block-05__slide-block p{
-    font-size: 18px;
+    font-size: 0.9rem;
     color: #ffffff;
-    line-height: 21px;
+    line-height: 1.05rem;
     letter-spacing: 0.2px;
     flex: 1;
 }
 .block-05__links{
-    padding-left: 10px;
-    margin-bottom: 18px;
+    padding-left: 0.5rem;
+    margin-bottom: 0.9rem;
 }
 .block-05__links a{
-    padding-right: 1px;
+    padding-right: 0.05rem;
+}
+.block-05 svg{
+    width: 1.7vw;
 }
 /* .block-05__empty{
     grid-row: 2 / 3;
@@ -658,29 +685,33 @@ a:visited {
 
 /*FOOTER*/
 .block-06{
-    margin: auto;
+    margin-top: 5.1rem;
 }
 .block-06__map{
     width: 100%;
-    margin-top: 102px;
+    margin: auto;
+}
+.block-06__map img{
+    width: 100%;
 }
 .block-06__links{
     background: #90d23d;
     margin: auto;
     text-align: center;
-    padding-top: 60px;
+    padding-top: 3rem;
 }
 .block-06__links a{
-    padding: 0 4px;
+    padding: 0 0.2rem;
 }
 .block-06__links p{
     font-weight: 300;
-    font-size: 18px;
+    font-size: 0.9rem;
     color: #fff;
-    padding-top: 25px;
+    padding-top: 1.25rem;
     line-height: 1.2;
-    padding-bottom: 40px;
+    padding-bottom: 2rem;
 }
-
-
+.block-06 svg{
+    width: 2.5vw;
+}
 
