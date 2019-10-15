@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/media.css">
     <style> svg g:hover{filter: url(#Filter_2)}</style>
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
 </head>
 
 
@@ -99,9 +101,9 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="block-03__table_centr">10:00</td>
-                        <td><a href="https://www.kinopoisk.ru/film/chelovek-pauk-2002-838/" target="_blank">Человек-паук</a></td>
-                        <td>фантастика, боевик, приключения</td>
+                        <td id="start_film_1" class="block-03__table_centr"></td>
+                        <td id="name_film_1"><a href="https://www.kinopoisk.ru/film/chelovek-pauk-2002-838/" target="_blank"></a></td>
+                        <td id="genre_film_1"></td>
                         <td><svg 
                             xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -111,9 +113,9 @@
                         </svg></td>
                     </tr>
                     <tr>
-                        <td class="block-03__table_centr">12:00</td>
-                        <td><a href="https://www.kinopoisk.ru/film/1122114/" target="_blank">Собачья жизнь 2</a></td>
-                        <td>фэнтези, драмма, комедия</td>
+                        <td id="start_film_2" class="block-03__table_centr"></td>
+                        <td id="name_film_2"><a href="https://www.kinopoisk.ru/film/1122114/" target="_blank"></a></td>
+                        <td id="genre_film_2"></td>
                         <td><svg 
                             xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -123,9 +125,9 @@
                         </svg></td>
                         </tr>
                     <tr>
-                        <td class="block-03__table_centr">14:00</td>
-                        <td><a href="https://www.kinopoisk.ru/film/istoriya-igrushek-4-2019-846824/" target="_blank">История игрушек 4</a></td>
-                        <td>мультфильм, фэнтези, комедия</td>
+                        <td id="start_film_3" class="block-03__table_centr"></td>
+                        <td id="name_film_3"><a href="https://www.kinopoisk.ru/film/istoriya-igrushek-4-2019-846824/" target="_blank"></a></td>
+                        <td id="genre_film_3"></td>
                         <td><svg 
                             xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -135,9 +137,9 @@
                         </svg></td>
                     </tr>
                     <tr>
-                        <td class="block-03__table_centr">16:00</td>
-                        <td><a href="https://www.kinopoisk.ru/film/693730/" target="_blank">Люди в черном: Интернэшнл</a></td>
-                        <td>фантастика, боевик, приключения</td>
+                        <td id="start_film_4" class="block-03__table_centr"></td>
+                        <td id="name_film_4"><a href="https://www.kinopoisk.ru/film/693730/" target="_blank"></a></td>
+                        <td id="genre_film_4"></td>
                         <td><svg 
                             xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -182,7 +184,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias, animi, commodi eius ipsum,<br>laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae, suscipit!</p>    
         </div> 
         <p><a name="block-05"></a></p>
-        <div class="block-05__row">
+        <div class="block-05__row owl-carousel">
             <!-- <div class="block-05__col block-05__empty">
             </div> -->
 
@@ -1401,7 +1403,27 @@
         </div>
     </form>    
     
+    <script src="js/films.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                400:{
+                    items:2
+                },
+                600:{
+                    items:3
+                }
+            }
+        })  
+    </script>
 
 </body>
 
