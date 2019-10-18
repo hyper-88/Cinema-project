@@ -292,10 +292,10 @@ a:visited {
     float: left;
     padding-right: 1.35rem;
 }
-.block-01 header ul li:nth-child(5){
-    padding-right: 0.15rem;
-    text-transform: none;
-    padding-left: 3.5rem;
+.block-01__your_city{
+    font-size: 0.75rem;
+    padding-left: 4rem;
+    float: left;
 }
 .block-01 header ul li a:hover{
     color: #90d23d;

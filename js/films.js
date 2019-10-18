@@ -5,11 +5,10 @@ let films = [
     ['14:00', 'История игрушек 4', 6],
     ['16:00', 'Люди в черном: Интернэшнл', 0]
 ]
-let film = new Array
+let film = new Array();
 for (let i = 0; i < films.length; i++) {
     for (let y = 0; y < films[i].length; y++) {
         film[y] = films[i][y];
-        console.log(film.length);
         switch (i) {
             case 0:
                 let element_start_film_1 = document.getElementById('start_film_1');
