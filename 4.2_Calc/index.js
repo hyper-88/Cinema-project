@@ -7,6 +7,7 @@ for (var i = 0; i < keys.length; i++) {
         var inputVal = input.innerHTML;
         var btnVal = this.innerHTML;
         var total;
+        console.log(btnVal);
         if (btnVal == '=') {
             var equation = inputVal;
             var lastChar = equation[equation.length - 1];
@@ -38,10 +39,13 @@ for (var i = 0; i < keys.length; i++) {
                 decimalAdded = true;
             }
         }
+        else if (btnVal == 'C') {
+            input.innerHTML = null;
+        }
         else {
             input.innerHTML += btnVal;
         }
         e.preventDefault();
-        console.log(equation);
+        console.log(inputVal);
     }
 }

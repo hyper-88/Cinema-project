@@ -59,8 +59,8 @@
     .block-04__text {
         padding-left: 15.85rem;
     }
-    .block-04 a {
-        margin-right: 1.3rem;
+    .block-04 button {
+        margin-right: 0.5rem;
     }
 }
 @media (max-width:600px){

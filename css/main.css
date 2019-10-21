@@ -134,7 +134,13 @@
 }
 
 /*Общие стили*/
-body, a, p, h1, h2, h3, h4{
+body,
+a,
+p,
+h1,
+h2,
+h3,
+h4 {
     background: transparent;
     border: 0;
     margin: 0;
@@ -144,44 +150,55 @@ body, a, p, h1, h2, h3, h4{
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-html{
+
+html {
     font-size: 1.04vw;
 }
-body{
+
+body {
     min-width: 320px;
     -webkit-text-size-adjust: 100%;
 }
+
 form {
     width: 20rem;
 }
-input, textarea, select {
-    font-size: 19px;
+
+input,
+textarea,
+select {
+    font-size: 0.95rem;
     color: #6c6c6c;
-    padding: 15px 11px;
-    border: 1px solid #bebebe;
-    border-radius: 5px;
+    padding: 0.75rem 0.5rem;
+    border: 0.1rem solid #bebebe;
+    border-radius: 0.25rem;
     width: 100%;
     outline: 0;
     transition: .2s;
+    margin-bottom: 1rem;
 }
+
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     background: url(../img/down-arrow.svg) 96% center / 5% no-repeat #fff;
 }
+
 input[type="radio"],
 input[type="checkbox"] {
     display: none;
 }
-input[type="radio"] + label,
-input[type="checkbox"] + label {
+
+input[type="radio"]+label,
+input[type="checkbox"]+label {
     font-size: 16px;
     padding-left: 23px;
     position: relative;
 }
-input[type="radio"] + label::before,
-input[type="checkbox"] + label::before {
+
+input[type="radio"]+label::before,
+input[type="checkbox"]+label::before {
     content: '';
     position: absolute;
     left: 0;
@@ -190,13 +207,16 @@ input[type="checkbox"] + label::before {
     height: 14px;
     border: 1px solid #000;
 }
-input[type="radio"] + label::before {
+
+input[type="radio"]+label::before {
     border-radius: 100%;
 }
+
 input[type="textarea"] {
     height: 250px;
     resize: none;
 }
+
 input[type="file"] {
     position: absolute;
     opacity: 0;
@@ -206,7 +226,8 @@ input[type="file"] {
     box-shadow: none;
     border: 0;
 }
-input[type="file"] + label {
+
+input[type="file"]+label {
     font-size: 18px;
     color: #90d23d;
     position: relative;
@@ -219,27 +240,26 @@ input[type="file"] + label {
     cursor: pointer;
     border-radius: 5px;
 }
+
 input[type="button"],
 button {
+    border-radius: 0.75rem;
     border-right: 1px solid transparent;
     border-bottom: 1px solid transparent;
 }
-input[type="button"]:hover,
-button:active {
-    border:none;
-    line-height: 22px;
-}
+
 .button {
-    display: inline-block;
-    padding: 16px 30px;
-    font-size: 18px;
-    color: #fff;
     background-color: rgb(144, 210, 61);
-    border-radius: 15px;
+    border: 0.1rem solid rgb(144, 210, 61);
+    ;
+    padding: 0.75rem 1.55rem;
+    color: #fff;
 }
-a:link{
+
+a:link {
     color: inherit;
 }
+
 a:visited {
     color: inherit;
 }
@@ -248,7 +268,7 @@ a:visited {
 
 /*ШАПКА*/
 .block-01 {
-    background: linear-gradient( rgba(37, 37, 37, 0.8), rgba(27, 9, 9, 0.5) ), url(../img/Block01.jpg);
+    background: linear-gradient(rgba(37, 37, 37, 0.8), rgba(27, 9, 9, 0.5)), url(../img/Block01.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -262,6 +282,7 @@ a:visited {
     color: #fff;
     /*min-height: 100vh;*/
 }
+
 .block-01:after {
     content: '';
     position: absolute;
@@ -270,45 +291,54 @@ a:visited {
     border-left: 100vw solid transparent;
     border-bottom: 8.3rem solid white;
 }
-.block-01__logo{
+
+.block-01__logo {
     float: left;
     margin-left: 8.45rem;
     margin-right: 6.15rem;
     width: 9.4rem;
 }
-.block-01__logo img{
+
+.block-01__logo img {
     width: 100%;
 }
-.block-01 header ul{
+
+.block-01 header ul {
     text-transform: uppercase;
     padding-top: 0.8rem;
     font-size: 0.75rem;
 }
-.block-01 header{
+
+.block-01 header {
     width: 68.35rem;
     margin: auto;
 }
-.block-01 header ul li{
+
+.block-01 header ul li {
     float: left;
     padding-right: 1.35rem;
 }
-.block-01__your_city{
+
+.block-01__your_city {
     font-size: 0.75rem;
     padding-left: 4rem;
     float: left;
 }
-.block-01 header ul li a:hover{
+
+.block-01 header ul li a:hover {
     color: #90d23d;
     border-bottom: 1px solid #90d23d;
 }
-.block-01 h1{
+
+.block-01 h1 {
     font-weight: 200;
     font-size: 4.05rem;
     padding-top: 9.6rem;
     text-align: center;
     padding-left: 0.35rem;
 }
-.block-01 h2{
+
+.block-01 h2 {
     font-size: 2.53rem;
     padding-top: 0.5rem;
     text-align: center;
@@ -317,29 +347,34 @@ a:visited {
 
 
 /*ПРЕИМУЩЕСТВА*/
-.block-02{
+.block-02 {
     width: 55rem;
     margin: auto;
 }
-.block-02__container{
+
+.block-02__container {
     margin-top: 2.7rem;
     overflow: hidden;
 }
-.block-02__container h2{
+
+.block-02__container h2 {
     font-weight: bold;
     font-size: 2.5rem;
     padding-left: 1.8rem;
     margin-bottom: 4.35rem;
 }
-.block-02__row{
+
+.block-02__row {
     display: flex;
 }
-.block-02__col{
+
+.block-02__col {
     display: flex;
     flex-direction: column;
     flex: 1;
 }
-.block-02__image-wrap{
+
+.block-02__image-wrap {
     height: 1.55rem;
     width: 10rem;
     display: flex;
@@ -348,13 +383,16 @@ a:visited {
     flex-direction: column;
     flex: 0 0 12.4rem;
 }
-.block-02__image-wrap img{
+
+.block-02__image-wrap img {
     width: 100%;
 }
-.block-02__image-wrap img:hover{
+
+.block-02__image-wrap img:hover {
     transform: scale(1.07);
 }
-.block-02__col h3{
+
+.block-02__col h3 {
     font-weight: bold;
     font-size: 1.75rem;
     display: flex;
@@ -363,7 +401,8 @@ a:visited {
     justify-content: flex-end;
     flex-basis: 3.85rem;
 }
-.block-02__col p{
+
+.block-02__col p {
     font-weight: 300;
     font-size: 0.7rem;
     line-height: 1.2;
@@ -375,29 +414,33 @@ a:visited {
     flex-basis: 4.4rem;
     text-align: center;
 }
-.block-02__info-wrap{
+
+.block-02__info-wrap {
     width: 51.5rem;
     margin: 0 auto;
     position: relative
 }
-.block-02__info{
+
+.block-02__info {
     position: absolute;
     width: 22.9rem;
     padding: 1.8rem 1.45rem 1.25rem;
     background: #fff;
-    box-shadow: 0px 1px	 2px 0px rgba(35, 31, 32, 0.65);
+    box-shadow: 0px 1px 2px 0px rgba(35, 31, 32, 0.65);
     top: -10.4rem;
     right: -0.1rem;
     z-index: 1;
 }
-.block-02__info h2{
+
+.block-02__info h2 {
     font-weight: bold;
     font-size: 2rem;
     color: #252525;
     padding-bottom: 1.65rem;
     padding-left: 0.15rem;
 }
-.block-02__info p{
+
+.block-02__info p {
     font-weight: 300;
     font-size: 0.7rem;
     color: #242424;
@@ -408,51 +451,60 @@ a:visited {
 }
 
 /*ТАБЛИЦА С СЕАНСАМИ*/
-.block-03{
+.block-03 {
     padding-top: 6.2rem;
 }
-.block-03__header{
+
+.block-03__header {
     font-size: 2.5rem;
     color: #252525;
     font-weight: 700;
     margin: 0 0 4.1rem;
     text-align: center;
 }
-.block-03__container{
+
+.block-03__container {
     max-width: 51.5rem;
     margin: 0 auto;
     color: #fff;
 }
-.block-03__table{
+
+.block-03__table {
     width: 100%;
     border-collapse: collapse;
     border-radius: 0.75rem;
     overflow: hidden;
     /*height: 80vh;*/
 }
-.block-03__table th{
+
+.block-03__table th {
     font-size: 1.3rem;
     font-weight: 700;
     background: #a3cc40;
-    padding: 1.2rem 0;
+    padding: 1.25rem 0;
     vertical-align: middle;
-}  
-.block-03__table td{
+}
+
+.block-03__table td {
     font-size: 1.1rem;
     font-weight: 400;
-    padding: 0.85rem 0 0.83rem 0;
+    padding: 0.78rem 0 0.83rem 0;
     vertical-align: middle;
-}  
-.block-03__container tr:nth-child(2n+1){
+}
+
+.block-03__container tr:nth-child(2n+1) {
     background: #373737;
 }
-.block-03__container tr:nth-child(2n){
+
+.block-03__container tr:nth-child(2n) {
     background: #4b4d4f;
 }
-.block-03__container tr:nth-child(3n){
+
+.block-03__container tr:nth-child(3n) {
     background: #6c6c6c;
 }
-.block-03__triangle-up{
+
+.block-03__triangle-up {
     width: 0;
     height: 0;
     border-style: solid;
@@ -460,7 +512,8 @@ a:visited {
     border-color: transparent transparent #ffffff transparent;
     display: inline-block;
 }
-.block-03__triangle-down{
+
+.block-03__triangle-down {
     width: 0;
     height: 0;
     border-style: solid;
@@ -468,58 +521,68 @@ a:visited {
     border-color: #ffffff transparent transparent transparent;
     display: inline-block;
 }
+
 .block-03__table_colsize-1 {
     width: 12.75rem;
 }
+
 .block-03__table_colsize-4 {
     width: 4.2rem;
 }
+
 .block-03__table_centr {
     text-align: center;
 }
+
 .block-03__container table thead th:nth-child(2) {
     text-align: left;
 }
+
 .block-03__container table tbody tr td:nth-child(4) {
     text-align: center;
 }
-.block-03__text{
+
+.block-03__text {
     font-weight: 300;
     font-size: 0.7rem;
     line-height: 1.2;
-    padding-top: 1.95rem;
+    padding-top: 1.85rem;
     text-align: center;
     width: 41.55rem;
     margin: auto;
 }
-.block-03 svg{
+
+.block-03 svg {
     width: 2rem;
 }
 
 /*ПОДАРОК*/
-.block-04{
+.block-04 {
     margin-top: 6.3rem;
 }
-.block-04__back{
-    background: linear-gradient( rgba(32, 32, 32, 0.8), rgba(0, 0, 0, 0.5) ), url(../img/Block04.jpg);
+
+.block-04__back {
+    background: linear-gradient(rgba(32, 32, 32, 0.8), rgba(0, 0, 0, 0.5)), url(../img/Block04.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #000;
     padding-top: 7.25rem;
-    padding-bottom: 10.8rem;
+    padding-bottom: 9.9rem;
 
     position: relative;
     margin: auto;
-    
+
     overflow: hidden;
 }
-.block-04__container{
+
+.block-04__container {
     width: 68.3rem;
     color: #fff;
     text-align: right;
     margin: auto;
 }
+
 .block-04__back::before {
     content: '';
     position: absolute;
@@ -528,6 +591,7 @@ a:visited {
     border-right: 100vw solid transparent;
     border-top: 8.5rem solid white;
 }
+
 .block-04__back:after {
     content: '';
     position: absolute;
@@ -536,18 +600,21 @@ a:visited {
     border-left: 100vw solid transparent;
     border-bottom: 8.5rem solid white;
 }
-.block-04__text{
+
+.block-04__text {
     padding-top: 0.95rem;
     padding-left: 26.85rem;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1rem;
     width: 33.35rem;
 }
-.block-04__text h3{
+
+.block-04__text h3 {
     font-size: 2.5rem;
     font-weight: 900;
     padding-bottom: 3rem;
 }
-.block-04__text p{
+
+.block-04__text p {
     font-weight: 300;
     font-size: 0.7rem;
     line-height: 1.2;
@@ -555,27 +622,30 @@ a:visited {
     padding-bottom: 0.85rem;
 }
 
-.block-04 a{
-    border-radius: 0.75rem;
+.block-04 button {
     background-color: rgb(144, 210, 61);
-    border: 0.1rem solid rgb(144, 210, 61);;
-    padding: 0.75rem 1.5rem;
-    margin-right: 8.3rem;
+    border: 0.1rem solid rgb(144, 210, 61);
+    ;
+    padding: 0.75rem 1.55rem;
     color: #fff;
+    margin-right: 8.3rem;
     font-weight: normal;
     font-size: 0.9rem;
     transition: 0.2s;
 }
-.block-04 a:hover{
+
+.block-04 button:hover {
     border: 0.1rem solid rgb(144, 210, 61);
     background-color: transparent;
 }
-.block-04__image-wrap{
+
+.block-04__image-wrap {
     width: 51.5rem;
     margin: 0 auto;
     position: relative
 }
-.block-04__image{
+
+.block-04__image {
     background: url(../img/b4_img.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -593,32 +663,37 @@ a:visited {
 }
 
 /*ФИЛЬМЫ*/
-.block-05{
+.block-05 {
     width: 48.5rem;
     margin: auto;
     margin-top: 3.2rem;
 }
-.block-05__text{
+
+.block-05__text {
     margin-bottom: 3.9rem;
 }
-.block-05__text h4{
+
+.block-05__text h4 {
     font-weight: bold;
     font-size: 2.5rem;
 }
-.block-05__text p{
+
+.block-05__text p {
     font-weight: 300;
     font-size: 0.705rem;
     line-height: 1.15;
     padding-top: 2.05rem;
 }
-.block-05__row{
+
+.block-05__row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 2.05rem;
     grid-row-gap: 2.05rem;
-    
+
 }
-.block-05__col{
+
+.block-05__col {
     position: relative;
     width: 14.8rem;
     height: 14.8rem;
@@ -626,10 +701,12 @@ a:visited {
     text-align: left;
     border-radius: 0.75rem;
 }
-.block-05__col img{
+
+.block-05__col img {
     width: 100%;
 }
-.block-05__slide-block{
+
+.block-05__slide-block {
     position: absolute;
     left: 0;
     right: 0;
@@ -646,16 +723,19 @@ a:visited {
     padding-left: 1.2rem;
     padding-top: 1.15rem;
 }
-.block-05__col:hover .block-05__slide-block{
+
+.block-05__col:hover .block-05__slide-block {
     bottom: 0;
 }
-.block-05__slide-text{
+
+.block-05__slide-text {
     font-size: 1.75rem;
     font-weight: 900;
     color: #ffffff;
     margin: 0 0 0.6rem;
 }
-.block-05__slide-block hr{
+
+.block-05__slide-block hr {
     width: 4.15rem;
     height: 0.3rem;
     border: 0;
@@ -663,49 +743,59 @@ a:visited {
     margin: 0 0 0.7rem;
     background: #fff;
 }
-.block-05__slide-block p{
+
+.block-05__slide-block p {
     font-size: 0.9rem;
     color: #ffffff;
     line-height: 1.05rem;
     letter-spacing: 0.2px;
     flex: 1;
 }
-.block-05__links{
+
+.block-05__links {
     padding-left: 0.5rem;
     margin-bottom: 0.9rem;
 }
-.block-05__links a{
+
+.block-05__links a {
     padding-right: 0.05rem;
 }
-.block-05 svg{
+
+.block-05 svg {
     width: 1.7rem;
 }
+
 /* .block-05__empty{
     grid-row: 2 / 3;
     grid-column: 2 / 3;
 } */
 
 /*FOOTER*/
-.block-06{
+.block-06 {
     margin-top: 5.1rem;
 }
-.block-06__map{
+
+.block-06__map {
     width: 100%;
     margin: auto;
 }
-.block-06__map img{
+
+.block-06__map img {
     width: 100%;
 }
-.block-06__links{
+
+.block-06__links {
     background: #90d23d;
     margin: auto;
     text-align: center;
     padding-top: 3rem;
 }
-.block-06__links a{
+
+.block-06__links a {
     padding: 0 0.2rem;
 }
-.block-06__links p{
+
+.block-06__links p {
     font-weight: 300;
     font-size: 0.9rem;
     color: #fff;
@@ -713,7 +803,40 @@ a:visited {
     line-height: 1.2;
     padding-bottom: 2rem;
 }
-.block-06 svg{
+
+.block-06 svg {
     width: 2.5rem;
 }
 
+/*Всплывающее окно*/
+#block-07 {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding-top: 10rem;
+}
+
+#block-07__present-window {
+    position: relative;
+    background-color: #fff;
+    margin: 0 auto;
+    width: 22rem;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+#block-07__close-present-window {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    cursor: pointer;
+}
+
+#block-07__client-name {
+    width: 20.8rem;
+}
