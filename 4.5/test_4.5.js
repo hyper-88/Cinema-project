@@ -22,13 +22,14 @@ let a7 = {};
 let k = document.getElementById('key__input');
 let v = document.getElementById('value__input');
 let button = document.getElementById('submit');
-button.onclick = function () {
+button.onclick = function (e) {
+    e.preventDefault();
     let key = k.value;
     let val = v.value;
     a7[key] = val;
     //console.log('Массив', a7);
-    key1 = String(key);
-    val1 = String(val);
+    key1 = key.toString();
+    val1 = val.toString();
     let out_key = document.getElementById('out_key');
     out_key.innerHTML = key1;
     let out_val = document.getElementById('out_val');

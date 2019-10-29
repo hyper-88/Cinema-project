@@ -101,18 +101,19 @@
             Выберите фильм
         </h3>
         <div class="block-03__container">
-            <table class="block-03__table">
+            <table id="films_hire" class="block-03__table">
                 <thead>
                     <tr>
-                        <th class="block-03__table_colsize-1"><a href="#">Начало сеанса <span
+                        <th class="block-03__table_colsize-1"><a href="#">Начало <span
                                     class="block-03__triangle-up"></span></a></th>
                         <th><a href="#">Название фильма <span class="block-03__triangle-down"></span></a></th>
                         <th>Жанр</th>
+                        <th>Цена</th>
                         <th class="block-03__table_colsize-4"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <!-- <tr>
                         <td id="start_film_1" class="block-03__table_centr"></td>
                         <td id="name_film_1"><a href="https://www.kinopoisk.ru/film/chelovek-pauk-2002-838/"
                                 target="_blank"></a></td>
@@ -153,7 +154,7 @@
                                 <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
                                     d="M16.505,32.994 C7.393,32.994 0.005,25.606 0.005,16.494 C0.005,7.381 7.393,-0.006 16.505,-0.006 C25.618,-0.006 33.005,7.381 33.005,16.494 C33.005,25.606 25.618,32.994 16.505,32.994 ZM24.214,14.591 L18.356,14.631 L18.356,8.796 L13.958,8.778 L13.958,14.637 L8.083,14.637 L8.083,19.074 L13.958,19.074 L13.958,24.889 L18.336,24.889 L18.307,19.074 L24.231,19.074 L24.214,14.591 Z" />
                             </svg></td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
@@ -1413,10 +1414,11 @@
 
     </footer>
 
+    <!-- ВСПЛЫВАЮЩИЕ ОКНА -->
+    <!-- Форма получения подарка -->
     <div id="block-07">
         <div id="block-07__present-window">
             <button id="block-07__close-present-window">X</button>
-            <!-- <form action=""> -->
             <div>
                 <input id="block-07__client-name" placeholder="Введите имя">
             </div>
@@ -1431,9 +1433,52 @@
             <div>
                 <button id="block-07__get-present" class="button" type="submit">Получить</button>
             </div>
-            <!-- </form> -->
         </div>
     </div>
+
+    <!-- Форма заказа билета -->
+    <div id="block-08">
+        <div id="block-08__booking-window">
+            <button id="block-08__close-booking-window">X</button>
+            <div>
+                <span>Название фильма:</span>
+                <span id="block-08__film-name"></span>
+            </div>
+            <div>
+                <span>Начало сеанса:</span>
+                <span id="block-08__film-start"></span>
+            </div>
+            <div>
+                <span>Жанр:</span>
+                <span id="block-08__film-genre"></span>
+            </div>
+            <div class="block-price">
+                <span>Стоимость билета:</span>
+                <span id="block-08__film-price">0</span>
+                <span>руб.</span>
+            </div>
+            <div>
+                <div>Количество билетов:</div>
+                <input type="number" min="1" max="50" value="1" step="1" id="block-08__film-value">
+            </div>
+            <div class="block-08__total">
+                <span>Итого:</span>
+                <span id="block-08__total-price">0</span>
+                <span>руб.</span>
+            </div>
+            <div>
+                <input type="text" name="tel" id="block-08__client-phone" placeholder="Номер телефона" minlength="13" maxlength="13">
+            </div>
+            <div>
+                <input id="block-08__client-name" placeholder="Ваше имя">
+            </div>
+            <div>
+                <button id="block-08__book" class="button" type="submit">Забронировать</button>
+            </div>
+            
+        </div>
+    </div>
+
 
     <script src="js/films.js"></script>
     <script src="js/getPresent.js"></script>

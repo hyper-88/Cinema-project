@@ -500,7 +500,7 @@ a:visited {
     background: #4b4d4f;
 }
 
-.block-03__container tr:nth-child(3n) {
+.block-03__container tr:nth-child(3n+2) {
     background: #6c6c6c;
 }
 
@@ -523,11 +523,11 @@ a:visited {
 }
 
 .block-03__table_colsize-1 {
-    width: 12.75rem;
+    width: 8rem;
 }
 
 .block-03__table_colsize-4 {
-    width: 4.2rem;
+    width: 3rem;
 }
 
 .block-03__table_centr {
@@ -554,6 +554,11 @@ a:visited {
 
 .block-03 svg {
     width: 2rem;
+}
+
+#films_hire tr:hover td {
+    color: darksalmon;
+    cursor: pointer;
 }
 
 /*ПОДАРОК*/
@@ -808,7 +813,7 @@ a:visited {
     width: 2.5rem;
 }
 
-/*Всплывающее окно*/
+/*Всплывающие окна*/
 #block-07 {
     display: none;
     position: fixed;
@@ -839,4 +844,52 @@ a:visited {
 
 #block-07__client-name {
     width: 20.8rem;
+}
+
+#block-08 {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding-top: 10rem;
+}
+
+#block-08__booking-window {
+    position: relative;
+    background-color: #fff;
+    margin: 0 auto;
+    width: 25rem;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+#block-08__close-booking-window {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    cursor: pointer;
+}
+
+#block-08__film-value,
+#block-08__client-phone,
+#block-08__client-name,
+#block-08__film-start {
+    width: 23.8rem;
+}
+
+.block-price {
+    margin-bottom: 1rem;
+}
+
+.block-08__total {
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+#block-08__client-phone:focus {
+    outline: none;
 }
