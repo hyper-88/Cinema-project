@@ -68,19 +68,66 @@ films = [
         dribble: "http://dribble.com",
         link: "https://www.kinopoisk.ru/film/693730/"
     },
-    
+
 ]
 
 let films_hire = [];
 let films_new = [];
 
+let p = new Promise((resolve, reject) => {
+    //api изменил что бы было побольше свежих фильмов
+    var url = 'https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2019-10-25&api_key=e2c01b015b375681951ef2536440f652';
+    var request = new XMLHttpRequest(); //XHR
+    request.open('GET', url, true);
+    request.onload = function () {
+        if (this.status >= 200 && this.status < 400) {
+            // Success!
+            var data = JSON.parse(this.response);
+            resolve(data)
+        } else {
+            // We reached our target server, but it returned an error
+            reject()
+        }
+    };
+
+    request.onerror = function () {
+        // There was a connection error of some sort
+    };
+    request.send();
+})
+
+p.then((data) => {
+    const films_API = data.results
+    const urlServerApiImages = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2'
+    const filmsForSlider = films_API.map(film_API => {
+        return ({
+            name_film: film_API.title,
+            // genre_ids: film_API.genre_ids,
+            poster_path: urlServerApiImages + film_API.poster_path,
+            release_date: film_API.release_date,
+            overview: film_API.overview
+        })
+    })
+    
+    //Поиск предстоящих фильмов из массива
+    for (let i = 0; i < filmsForSlider.length; i++) {
+        let now = new Date()
+        let today = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate()
+
+        if (filmsForSlider[i].release_date > today) {
+            films_new.push(filmsForSlider[i])
+        }
+    }
+})
+
 for (let i = 0; i < films.length; i++) {
+
     if (films[i].hire === true) {
         films_hire.push(films[i])
     }
-    if (films[i].new === true) {
-        films_new.push(films[i])
-    }
+    // if (films[i].new === true) {
+    //     films_new.push(films[i])
+    // }
 }
 
 const film = {
@@ -105,16 +152,16 @@ const film = {
     getLink: function () {
         return this.link
     },
+    out_new_film: function () {
+        const film_name = this.name_film;
+        const film_image = this.poster_path;
+        const film_description = this.overview;
+        // const film_fb = this.fb;
+        // const film_tw = this.twitter;
+        // const film_bh = this.behance;
+        // const film_dribble = this.dribble;
+        // const film_link = this.link;
 
-    out_new_film() {
-        const film_name = this.name;
-        const film_image = this.image;
-        const film_description = this.description;
-        const film_fb = this.fb;
-        const film_tw = this.twitter;
-        const film_bh = this.behance;
-        const film_dribble = this.dribble;
-        const film_link = this.link;
         filmHTML = `
         <img src="${film_image}" alt="">
         <div class="block-05__slide-block">
@@ -229,13 +276,12 @@ const film = {
             </div>
         </div>
         `;
-    return filmHTML;
+        return filmHTML;
     }
 }
 
 let booking_window = document.getElementById('block-08');
 let close_booking_window = document.getElementById('block-08__close-booking-window');
-
 
 close_booking_window.onclick = function () {
     booking_window.style.display = 'none'
@@ -297,6 +343,11 @@ for (let i = 0; i < films_hire.length; i++) {
     }
 }
 
+console.log('films_new', films_new)
+console.log('films_new.length', films_new.length)
+console.log('films_hire', films_hire)
+console.log('films_hire.length', films_hire.length)
+
 let films_new_HTML = document.getElementById("filmsNew");
 for (let i = 0; i < films_new.length; i++) {
     let current_film = films_new[i];
@@ -305,6 +356,7 @@ for (let i = 0; i < films_new.length; i++) {
     div.classList.add("block-05__col");
     div.innerHTML = film_newHTML;
     films_new_HTML.appendChild(div);
+
 }
 
 let inp = document.querySelector('#block-08__client-phone');
