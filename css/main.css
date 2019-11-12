@@ -742,7 +742,7 @@ a:visited {
 
 .block-05__slide-block hr {
     width: 4.15rem;
-    height: 0.3rem;
+    min-height: 0.3rem;
     border: 0;
     box-shadow: none;
     margin: 0 0 0.7rem;

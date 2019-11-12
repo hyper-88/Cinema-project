@@ -98,6 +98,7 @@ let p = new Promise((resolve, reject) => {
 
 p.then((data) => {
     const films_API = data.results
+    console.log('films_API', films_API)
     const urlServerApiImages = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2'
     const filmsForSlider = films_API.map(film_API => {
         return ({
@@ -105,11 +106,15 @@ p.then((data) => {
             // genre_ids: film_API.genre_ids,
             poster_path: urlServerApiImages + film_API.poster_path,
             release_date: film_API.release_date,
-            overview: film_API.overview
+            overview: film_API.overview,
+            fb: "https://fb.com",
+            twitter: "https://twitter.com",
+            behance: "https://www.behance.net",
+            dribble: "http://dribble.com",
         })
     })
-    
-    //Поиск предстоящих фильмов из массива
+
+    //Поиск предстоящих фильмов. Инициализация массива films_new
     for (let i = 0; i < filmsForSlider.length; i++) {
         let now = new Date()
         let today = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate()
@@ -118,8 +123,26 @@ p.then((data) => {
             films_new.push(filmsForSlider[i])
         }
     }
+    console.log('filmsForSlider', filmsForSlider)
+    console.log('films_new', films_new)
+    console.log('films_new.length', films_new.length)
+    console.log('films_hire', films_hire)
+    console.log('films_hire.length', films_hire.length)
+
+    let films_new_HTML = document.getElementById("filmsNew");
+    for (let i = 0; i < films_new.length; i++) {
+        let current_film = films_new[i];
+        let film_newHTML = film.out_new_film.bind(current_film)();
+        let div = document.createElement("div");
+        div.classList.add("block-05__col");
+        div.innerHTML = film_newHTML;
+        films_new_HTML.appendChild(div);
+
+    }
+
 })
 
+//Инициализация массива films_hire
 for (let i = 0; i < films.length; i++) {
 
     if (films[i].hire === true) {
@@ -156,11 +179,11 @@ const film = {
         const film_name = this.name_film;
         const film_image = this.poster_path;
         const film_description = this.overview;
-        // const film_fb = this.fb;
-        // const film_tw = this.twitter;
-        // const film_bh = this.behance;
-        // const film_dribble = this.dribble;
-        // const film_link = this.link;
+        const film_fb = this.fb;
+        const film_tw = this.twitter;
+        const film_bh = this.behance;
+        const film_dribble = this.dribble;
+        const film_link = this.link;
 
         filmHTML = `
         <img src="${film_image}" alt="">
@@ -343,21 +366,8 @@ for (let i = 0; i < films_hire.length; i++) {
     }
 }
 
-console.log('films_new', films_new)
-console.log('films_new.length', films_new.length)
-console.log('films_hire', films_hire)
-console.log('films_hire.length', films_hire.length)
 
-let films_new_HTML = document.getElementById("filmsNew");
-for (let i = 0; i < films_new.length; i++) {
-    let current_film = films_new[i];
-    let film_newHTML = film.out_new_film.bind(current_film)();
-    let div = document.createElement("div");
-    div.classList.add("block-05__col");
-    div.innerHTML = film_newHTML;
-    films_new_HTML.appendChild(div);
 
-}
 
 let inp = document.querySelector('#block-08__client-phone');
 
