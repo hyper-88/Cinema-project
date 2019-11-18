@@ -14,7 +14,7 @@ films = [
         genre: [0, 1, 2],
         hire: true,
         new: true,
-        price: 250,
+        price: 200,
         description: 'More about selling in the Envato Marketplaces',
         image: "img/mov1.jpg",
         fb: "https://fb.com",
@@ -29,7 +29,7 @@ films = [
         genre: [2, 4, 5],
         hire: true,
         new: true,
-        price: 220,
+        price: 200,
         description: 'More about selling in the Envato Marketplaces',
         image: "img/mov2.jpg",
         fb: "https://fb.com",
@@ -59,7 +59,7 @@ films = [
         genre: [0, 1, 2],
         hire: true,
         new: true,
-        price: 350,
+        price: 200,
         description: 'More about selling in the Envato Marketplaces',
         image: "img/mov3.jpg",
         fb: "https://fb.com",
@@ -71,12 +71,36 @@ films = [
 
 ]
 
+//Создание массива с местами
+let places = [];
+const get_place = function ([number, price, booking]) {
+    return {
+        number,
+        price,
+        booking
+    }
+}
+for (let i = 0; i < 10; i++) {
+    let n = i + 1;
+    let p;
+    let b = Math.random() >= 0.6; //0.6 - что бы было больше свободных мест
+    if (n > 3 && n < 8) {
+        p = 230;
+    }
+    else {
+        p = 200;
+    }
+    places[i] = get_place([n, p, b])
+}
+console.log(places);
+
+
 let films_hire = [];
 let films_new = [];
 
 let p = new Promise((resolve, reject) => {
     //api изменил что бы было побольше свежих фильмов
-    var url = 'https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2019-10-25&api_key=e2c01b015b375681951ef2536440f652';
+    var url = 'https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2019-11-15&api_key=e2c01b015b375681951ef2536440f652';
     var request = new XMLHttpRequest(); //XHR
     request.open('GET', url, true);
     request.onload = function () {
@@ -98,7 +122,7 @@ let p = new Promise((resolve, reject) => {
 
 p.then((data) => {
     const films_API = data.results
-    console.log('films_API', films_API)
+    //console.log('films_API', films_API)
     const urlServerApiImages = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2'
     const filmsForSlider = films_API.map(film_API => {
         return ({
@@ -114,7 +138,7 @@ p.then((data) => {
         })
     })
 
-    //Поиск предстоящих фильмов. Инициализация массива films_new
+    //Поиск предстоящих фильмов. Инициализация массива films_new для блока 5
     for (let i = 0; i < filmsForSlider.length; i++) {
         let now = new Date()
         let today = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate()
@@ -123,12 +147,8 @@ p.then((data) => {
             films_new.push(filmsForSlider[i])
         }
     }
-    console.log('filmsForSlider', filmsForSlider)
-    console.log('films_new', films_new)
-    console.log('films_new.length', films_new.length)
-    console.log('films_hire', films_hire)
-    console.log('films_hire.length', films_hire.length)
 
+    //Вставка новых фильмов в блоке 5
     let films_new_HTML = document.getElementById("filmsNew");
     for (let i = 0; i < films_new.length; i++) {
         let current_film = films_new[i];
@@ -139,18 +159,33 @@ p.then((data) => {
         films_new_HTML.appendChild(div);
 
     }
-
+    owl();
 })
+
+const owl = function () {
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            400: {
+                items: 2
+            },
+            600: {
+                items: 3
+            }
+        }
+    })
+}
 
 //Инициализация массива films_hire
 for (let i = 0; i < films.length; i++) {
-
     if (films[i].hire === true) {
         films_hire.push(films[i])
     }
-    // if (films[i].new === true) {
-    //     films_new.push(films[i])
-    // }
 }
 
 const film = {
@@ -303,6 +338,7 @@ const film = {
     }
 }
 
+//Окно заказа фильма (блок 8)
 let booking_window = document.getElementById('block-08');
 let close_booking_window = document.getElementById('block-08__close-booking-window');
 
@@ -310,6 +346,101 @@ close_booking_window.onclick = function () {
     booking_window.style.display = 'none'
 }
 
+let block_booking_window = document.querySelector('.block-08__places');
+
+for (place of places) {
+    let place_div = document.createElement('div');
+    place_div.addEventListener('click', order);
+    place_div.addEventListener('click', placeToggle);
+    place_div.addEventListener('contextmenu', placeContext);
+    place_div.addEventListener('mousemove', placeHover);
+    place_div.addEventListener('mouseout', placeHoverOut);
+    place_div.innerHTML = place.number;
+    place_div.classList.add("block-08__place_div")
+
+    if (place.booking) {
+        place_div.classList.add("block-08__place_booked");
+    }
+    else {
+        place_div.classList.add("block-08__place_free");
+    }
+    block_booking_window.append(place_div)
+}
+
+let inp = document.querySelector('#block-08__client-phone');
+let button_book = document.getElementById('block-08__book');
+
+button_book.onclick = function () {
+    let booking_client_name = document.getElementById('block-08__client-name');
+    let booking_client_phone = document.getElementById('block-08__client-phone');
+
+    // Плагин для проверки номера телефона
+    inp.addEventListener('focus', _ => {
+        // Если там ничего нет или есть, но левое
+        if (!/^\+\d*$/.test(inp.value))
+            // То вставляем знак плюса как значение
+            inp.value = '+';
+    });
+    inp.addEventListener('keypress', e => {
+        // Отменяем ввод не цифр
+        if (!/\d/.test(e.key))
+            e.preventDefault();
+    });
+
+    if (booking_client_name.value) {
+        booking_client_name.style.border = '0.1rem solid #bebebe'
+    } else {
+        booking_client_name.style.border = '0.1rem solid red'
+    }
+
+    if (booking_client_phone.value.length == 13) {
+        booking_client_phone.style.border = '0.1rem solid #bebebe'
+    } else {
+        booking_client_phone.style.border = '0.1rem solid red'
+    }
+    if (booking_client_phone.value.length == 13 && booking_client_name.value) {
+        booking_window.style.display = 'none'
+        cons()
+        // places[el - 1].booking = true;
+        // console.log(places);
+    }
+}
+
+let el;
+function order(e) {
+    //console.log('order', e.target.innerHTML)
+    el = e.target.innerHTML;
+    if (places[el - 1].booking == true) {
+        alert('Место занято!');
+    }
+    else {
+        //console.log('el', el)
+        let chosen_place = document.getElementById('block-08__chosen_place');
+        chosen_place.value = el;
+        let booking_film_price2 = document.getElementById('block-08__film-price2');
+        booking_film_price2.innerHTML = places[el - 1].price;
+        places[el - 1].booking = true;
+        console.log(places);
+    }
+}
+function placeToggle() {
+    console.log('placeToggle', el)
+    if (places[el - 1].booking == false) {
+        //place_div.classList.remove("block-08__place_free");
+    }
+}
+function placeContext(event) {
+    event.preventDefault()
+    //console.log('placeContext')
+}
+function placeHover() {
+    //console.log('placeHover')
+}
+function placeHoverOut() {
+    //console.log('placeHoverOut')
+}
+
+//Вставка фильмов в прокате в таблице блока 3
 for (let i = 0; i < films_hire.length; i++) {
     const film_name = film.getName.bind(films_hire[i])()
     const film_start = film.getStart.bind(films_hire[i])()
@@ -347,14 +478,14 @@ for (let i = 0; i < films_hire.length; i++) {
         booking_film_genre.innerHTML = film_genre
         booking_film_price.innerHTML = film_price
 
-        let booking_film_value = document.getElementById('block-08__film-value');
-        let booking_total_price = document.getElementById('block-08__total-price');
+        // let booking_film_value = document.getElementById('block-08__film-value');
+        // let booking_total_price = document.getElementById('block-08__total-price');
 
-        booking_total_price.innerHTML = film_price * booking_film_value.value;
+        // booking_total_price.innerHTML = film_price * booking_film_value.value;
 
-        booking_film_value.onchange = function () {
-            booking_total_price.innerHTML = film_price * booking_film_value.value
-        }
+        // booking_film_value.onchange = function () {
+        //     booking_total_price.innerHTML = film_price * booking_film_value.value
+        //}
     }
 
     //Вывод заказа (запуск ниже)
@@ -368,44 +499,4 @@ for (let i = 0; i < films_hire.length; i++) {
 
 
 
-
-let inp = document.querySelector('#block-08__client-phone');
-
-let button_book = document.getElementById('block-08__book');
-button_book.onclick = function () {
-    let booking_client_name = document.getElementById('block-08__client-name');
-    let booking_client_phone = document.getElementById('block-08__client-phone');
-
-    // Плагин для проверки номера телефона
-    inp.addEventListener('focus', _ => {
-        // Если там ничего нет или есть, но левое
-        if (!/^\+\d*$/.test(inp.value))
-            // То вставляем знак плюса как значение
-            inp.value = '+';
-    });
-    inp.addEventListener('keypress', e => {
-        // Отменяем ввод не цифр
-        if (!/\d/.test(e.key))
-            e.preventDefault();
-    });
-
-    if (booking_client_name.value) {
-        booking_client_name.style.border = '0.1rem solid #bebebe'
-    } else {
-        booking_client_name.style.border = '0.1rem solid red'
-    }
-
-    if (booking_client_phone.value.length == 13) {
-        booking_client_phone.style.border = '0.1rem solid #bebebe'
-    } else {
-        booking_client_phone.style.border = '0.1rem solid red'
-    }
-    //console.log(booking_client_phone.value.length)
-    if (booking_client_phone.value.length == 13 && booking_client_name.value) {
-        booking_window.style.display = 'none'
-        cons()
-    }
-
-
-}
 
