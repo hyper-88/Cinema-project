@@ -406,15 +406,13 @@ button_book.onclick = function () {
     }
 }
 
-let el;
+// let el;
 function order(e) {
-    //console.log('order', e.target.innerHTML)
-    el = e.target.innerHTML;
+    let el = e.target.innerHTML;
     if (places[el - 1].booking == true) {
         alert('Место занято!');
     }
     else {
-        //console.log('el', el)
         let chosen_place = document.getElementById('block-08__chosen_place');
         chosen_place.value = el;
         let booking_film_price2 = document.getElementById('block-08__film-price2');
@@ -423,21 +421,20 @@ function order(e) {
         console.log(places);
     }
 }
-function placeToggle() {
-    console.log('placeToggle', el)
-    if (places[el - 1].booking == false) {
-        //place_div.classList.remove("block-08__place_free");
-    }
+function placeToggle(e) {
+    e.target.classList.remove("block-08__place_free");
+    e.target.classList.add("block-08__place_booked");
 }
 function placeContext(event) {
     event.preventDefault()
-    //console.log('placeContext')
+    let pc = event.target.innerHTML
+    alert(places[pc - 1].price)
 }
-function placeHover() {
-    //console.log('placeHover')
+function placeHover(e) {
+    e.target.classList.add("block-08__place_hover");
 }
-function placeHoverOut() {
-    //console.log('placeHoverOut')
+function placeHoverOut(e) {
+    e.target.classList.remove("block-08__place_hover");
 }
 
 //Вставка фильмов в прокате в таблице блока 3

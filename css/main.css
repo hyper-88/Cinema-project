@@ -913,3 +913,6 @@ a:visited {
 .block-08__place_booked{
     background: #ffa500;
 }
+.block-08__place_hover{
+    background: gray;
+}
