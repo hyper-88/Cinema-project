@@ -906,10 +906,11 @@ a:visited {
     height: 2rem;
     width: 2rem;
     text-align: center;
-}
-.block-08__place_free{
     background: #a3cc40;
 }
+/* .block-08__place_free{
+    background: #a3cc40;
+} */
 .block-08__place_booked{
     background: #ffa500;
 }

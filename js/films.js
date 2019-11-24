@@ -1,226 +1,227 @@
-const genres = [
-    'фантастика',
-    'боевик',       //1
-    'приключения',
-    'фэнтези',      //3
-    'драмма',
-    'комедия',      //5
-    'мультфильм']
+window.onload = function () {    //Скорее всего, это не очень корректно
+    const genres = [
+        'фантастика',
+        'боевик',       //1
+        'приключения',
+        'фэнтези',      //3
+        'драмма',
+        'комедия',      //5
+        'мультфильм']
 
-films = [
-    film1 = {
-        name: 'Человек-паук',
-        start: '10:00',
-        genre: [0, 1, 2],
-        hire: true,
-        new: true,
-        price: 200,
-        description: 'More about selling in the Envato Marketplaces',
-        image: "img/mov1.jpg",
-        fb: "https://fb.com",
-        twitter: "https://twitter.com",
-        behance: "https://www.behance.net",
-        dribble: "http://dribble.com",
-        link: "https://www.kinopoisk.ru/film/chelovek-pauk-2002-838/"
-    },
-    film2 = {
-        name: 'Собачья жизнь 2',
-        start: '12:00',
-        genre: [2, 4, 5],
-        hire: true,
-        new: true,
-        price: 200,
-        description: 'More about selling in the Envato Marketplaces',
-        image: "img/mov2.jpg",
-        fb: "https://fb.com",
-        twitter: "https://twitter.com",
-        behance: "https://www.behance.net",
-        dribble: "http://dribble.com",
-        link: "https://www.kinopoisk.ru/film/1122114/"
-    },
-    film3 = {
-        name: 'История игрушек 4',
-        start: '14:00',
-        genre: [2, 5, 6],
-        hire: true,
-        new: false,
-        price: 200,
-        description: 'More about selling in the Envato Marketplaces',
-        image: "",
-        fb: "https://fb.com",
-        twitter: "https://twitter.com",
-        behance: "https://www.behance.net",
-        dribble: "http://dribble.com",
-        link: "https://www.kinopoisk.ru/film/istoriya-igrushek-4-2019-846824/"
-    },
-    film4 = {
-        name: 'Люди в черном: Интернэшнл',
-        start: '16:00',
-        genre: [0, 1, 2],
-        hire: true,
-        new: true,
-        price: 200,
-        description: 'More about selling in the Envato Marketplaces',
-        image: "img/mov3.jpg",
-        fb: "https://fb.com",
-        twitter: "https://twitter.com",
-        behance: "https://www.behance.net",
-        dribble: "http://dribble.com",
-        link: "https://www.kinopoisk.ru/film/693730/"
-    },
-
-]
-
-//Создание массива с местами
-let places = [];
-const get_place = function ([number, price, booking]) {
-    return {
-        number,
-        price,
-        booking
-    }
-}
-for (let i = 0; i < 10; i++) {
-    let n = i + 1;
-    let p;
-    let b = Math.random() >= 0.6; //0.6 - что бы было больше свободных мест
-    if (n > 3 && n < 8) {
-        p = 230;
-    }
-    else {
-        p = 200;
-    }
-    places[i] = get_place([n, p, b])
-}
-console.log(places);
-
-
-let films_hire = [];
-let films_new = [];
-
-let p = new Promise((resolve, reject) => {
-    //api изменил что бы было побольше свежих фильмов
-    var url = 'https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2019-11-15&api_key=e2c01b015b375681951ef2536440f652';
-    var request = new XMLHttpRequest(); //XHR
-    request.open('GET', url, true);
-    request.onload = function () {
-        if (this.status >= 200 && this.status < 400) {
-            // Success!
-            var data = JSON.parse(this.response);
-            resolve(data)
-        } else {
-            // We reached our target server, but it returned an error
-            reject()
-        }
-    };
-
-    request.onerror = function () {
-        // There was a connection error of some sort
-    };
-    request.send();
-})
-
-p.then((data) => {
-    const films_API = data.results
-    //console.log('films_API', films_API)
-    const urlServerApiImages = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2'
-    const filmsForSlider = films_API.map(film_API => {
-        return ({
-            name_film: film_API.title,
-            // genre_ids: film_API.genre_ids,
-            poster_path: urlServerApiImages + film_API.poster_path,
-            release_date: film_API.release_date,
-            overview: film_API.overview,
+    films = [
+        film1 = {
+            name: 'Человек-паук',
+            start: '10:00',
+            genre: [0, 1, 2],
+            hire: true,
+            new: true,
+            price: 200,
+            description: 'More about selling in the Envato Marketplaces',
+            image: "img/mov1.jpg",
             fb: "https://fb.com",
             twitter: "https://twitter.com",
             behance: "https://www.behance.net",
             dribble: "http://dribble.com",
-        })
-    })
+            link: "https://www.kinopoisk.ru/film/chelovek-pauk-2002-838/"
+        },
+        film2 = {
+            name: 'Собачья жизнь 2',
+            start: '12:00',
+            genre: [2, 4, 5],
+            hire: true,
+            new: true,
+            price: 200,
+            description: 'More about selling in the Envato Marketplaces',
+            image: "img/mov2.jpg",
+            fb: "https://fb.com",
+            twitter: "https://twitter.com",
+            behance: "https://www.behance.net",
+            dribble: "http://dribble.com",
+            link: "https://www.kinopoisk.ru/film/1122114/"
+        },
+        film3 = {
+            name: 'История игрушек 4',
+            start: '14:00',
+            genre: [2, 5, 6],
+            hire: true,
+            new: false,
+            price: 200,
+            description: 'More about selling in the Envato Marketplaces',
+            image: "",
+            fb: "https://fb.com",
+            twitter: "https://twitter.com",
+            behance: "https://www.behance.net",
+            dribble: "http://dribble.com",
+            link: "https://www.kinopoisk.ru/film/istoriya-igrushek-4-2019-846824/"
+        },
+        film4 = {
+            name: 'Люди в черном: Интернэшнл',
+            start: '16:00',
+            genre: [0, 1, 2],
+            hire: true,
+            new: true,
+            price: 200,
+            description: 'More about selling in the Envato Marketplaces',
+            image: "img/mov3.jpg",
+            fb: "https://fb.com",
+            twitter: "https://twitter.com",
+            behance: "https://www.behance.net",
+            dribble: "http://dribble.com",
+            link: "https://www.kinopoisk.ru/film/693730/"
+        },
 
-    //Поиск предстоящих фильмов. Инициализация массива films_new для блока 5
-    for (let i = 0; i < filmsForSlider.length; i++) {
-        let now = new Date()
-        let today = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate()
+    ]
 
-        if (filmsForSlider[i].release_date > today) {
-            films_new.push(filmsForSlider[i])
+    //Создание массива с местами
+    let places = [];
+    const get_place = function ([number, price, booking]) {
+        return {
+            number,
+            price,
+            booking
         }
     }
-
-    //Вставка новых фильмов в блоке 5
-    let films_new_HTML = document.getElementById("filmsNew");
-    for (let i = 0; i < films_new.length; i++) {
-        let current_film = films_new[i];
-        let film_newHTML = film.out_new_film.bind(current_film)();
-        let div = document.createElement("div");
-        div.classList.add("block-05__col");
-        div.innerHTML = film_newHTML;
-        films_new_HTML.appendChild(div);
-
+    for (let i = 0; i < 10; i++) {
+        let n = i + 1;
+        let p;
+        let b = Math.random() >= 0.6; //0.6 - что бы было больше свободных мест
+        if (n > 3 && n < 8) {
+            p = 200;
+        }
+        else {
+            p = 100;
+        }
+        places[i] = get_place([n, p, b])
     }
-    owl();
-})
+    //console.log(places);
 
-const owl = function () {
-    $('.owl-carousel').owlCarousel({
-        loop: true,
-        margin: 20,
-        nav: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            400: {
-                items: 2
-            },
-            600: {
-                items: 3
+
+    let films_hire = [];
+    let films_new = [];
+
+    let p = new Promise((resolve, reject) => {
+        //api изменил что бы было побольше свежих фильмов
+        var url = 'https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2019-11-15&api_key=e2c01b015b375681951ef2536440f652';
+        var request = new XMLHttpRequest(); //XHR
+        request.open('GET', url, true);
+        request.onload = function () {
+            if (this.status >= 200 && this.status < 400) {
+                // Success!
+                var data = JSON.parse(this.response);
+                resolve(data)
+            } else {
+                // We reached our target server, but it returned an error
+                reject()
+            }
+        };
+
+        request.onerror = function () {
+            // There was a connection error of some sort
+        };
+        request.send();
+    })
+
+    p.then((data) => {
+        const films_API = data.results
+        //console.log('films_API', films_API)
+        const urlServerApiImages = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2'
+        const filmsForSlider = films_API.map(film_API => {
+            return ({
+                name_film: film_API.title,
+                // genre_ids: film_API.genre_ids,
+                poster_path: urlServerApiImages + film_API.poster_path,
+                release_date: film_API.release_date,
+                overview: film_API.overview,
+                fb: "https://fb.com",
+                twitter: "https://twitter.com",
+                behance: "https://www.behance.net",
+                dribble: "http://dribble.com",
+            })
+        })
+
+        //Поиск предстоящих фильмов. Инициализация массива films_new для блока 5
+        for (let i = 0; i < filmsForSlider.length; i++) {
+            let now = new Date()
+            let today = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate()
+
+            if (filmsForSlider[i].release_date > today) {
+                films_new.push(filmsForSlider[i])
             }
         }
-    })
-}
 
-//Инициализация массива films_hire
-for (let i = 0; i < films.length; i++) {
-    if (films[i].hire === true) {
-        films_hire.push(films[i])
-    }
-}
+        //Вставка новых фильмов в блоке 5
+        let films_new_HTML = document.getElementById("filmsNew");
+        for (let i = 0; i < films_new.length; i++) {
+            let current_film = films_new[i];
+            let film_newHTML = film.out_new_film.bind(current_film)();
+            let div = document.createElement("div");
+            div.classList.add("block-05__col");
+            div.innerHTML = film_newHTML;
+            films_new_HTML.appendChild(div);
 
-const film = {
-    getName: function () {
-        return this.name
-    },
-    getStart: function () {
-        return this.start
-    },
-    getGenre: function () {
-        const genres_films = this.genre
-        let arr_genres = []
-        for (let i = 0; i < genres_films.length; i++) {
-            arr_genres.push(genres[genres_films[i]])
         }
-        let str_genres = arr_genres.join(', ')
-        return str_genres
-    },
-    getPrice: function () {
-        return this.price
-    },
-    getLink: function () {
-        return this.link
-    },
-    out_new_film: function () {
-        const film_name = this.name_film;
-        const film_image = this.poster_path;
-        const film_description = this.overview;
-        const film_fb = this.fb;
-        const film_tw = this.twitter;
-        const film_bh = this.behance;
-        const film_dribble = this.dribble;
-        const film_link = this.link;
+        owl();
+    })
 
-        filmHTML = `
+    const owl = function () {
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                400: {
+                    items: 2
+                },
+                600: {
+                    items: 3
+                }
+            }
+        })
+    }
+
+    //Инициализация массива films_hire
+    for (let i = 0; i < films.length; i++) {
+        if (films[i].hire === true) {
+            films_hire.push(films[i])
+        }
+    }
+
+    const film = {
+        getName: function () {
+            return this.name
+        },
+        getStart: function () {
+            return this.start
+        },
+        getGenre: function () {
+            const genres_films = this.genre
+            let arr_genres = []
+            for (let i = 0; i < genres_films.length; i++) {
+                arr_genres.push(genres[genres_films[i]])
+            }
+            let str_genres = arr_genres.join(', ')
+            return str_genres
+        },
+        getPrice: function () {
+            return this.price
+        },
+        getLink: function () {
+            return this.link
+        },
+        out_new_film: function () {
+            const film_name = this.name_film;
+            const film_image = this.poster_path;
+            const film_description = this.overview;
+            const film_fb = this.fb;
+            const film_tw = this.twitter;
+            const film_bh = this.behance;
+            const film_dribble = this.dribble;
+            const film_link = this.link;
+
+            filmHTML = `
         <img src="${film_image}" alt="">
         <div class="block-05__slide-block">
             <div class="block-05__slide-text">
@@ -334,118 +335,129 @@ const film = {
             </div>
         </div>
         `;
-        return filmHTML;
-    }
-}
-
-//Окно заказа фильма (блок 8)
-let booking_window = document.getElementById('block-08');
-let close_booking_window = document.getElementById('block-08__close-booking-window');
-
-close_booking_window.onclick = function () {
-    booking_window.style.display = 'none'
-}
-
-let block_booking_window = document.querySelector('.block-08__places');
-
-for (place of places) {
-    let place_div = document.createElement('div');
-    place_div.addEventListener('click', order);
-    place_div.addEventListener('click', placeToggle);
-    place_div.addEventListener('contextmenu', placeContext);
-    place_div.addEventListener('mousemove', placeHover);
-    place_div.addEventListener('mouseout', placeHoverOut);
-    place_div.innerHTML = place.number;
-    place_div.classList.add("block-08__place_div")
-
-    if (place.booking) {
-        place_div.classList.add("block-08__place_booked");
-    }
-    else {
-        place_div.classList.add("block-08__place_free");
-    }
-    block_booking_window.append(place_div)
-}
-
-let inp = document.querySelector('#block-08__client-phone');
-let button_book = document.getElementById('block-08__book');
-
-button_book.onclick = function () {
-    let booking_client_name = document.getElementById('block-08__client-name');
-    let booking_client_phone = document.getElementById('block-08__client-phone');
-
-    // Плагин для проверки номера телефона
-    inp.addEventListener('focus', _ => {
-        // Если там ничего нет или есть, но левое
-        if (!/^\+\d*$/.test(inp.value))
-            // То вставляем знак плюса как значение
-            inp.value = '+';
-    });
-    inp.addEventListener('keypress', e => {
-        // Отменяем ввод не цифр
-        if (!/\d/.test(e.key))
-            e.preventDefault();
-    });
-
-    if (booking_client_name.value) {
-        booking_client_name.style.border = '0.1rem solid #bebebe'
-    } else {
-        booking_client_name.style.border = '0.1rem solid red'
+            return filmHTML;
+        }
     }
 
-    if (booking_client_phone.value.length == 13) {
-        booking_client_phone.style.border = '0.1rem solid #bebebe'
-    } else {
-        booking_client_phone.style.border = '0.1rem solid red'
-    }
-    if (booking_client_phone.value.length == 13 && booking_client_name.value) {
+    //Окно заказа фильма (блок 8)
+    let booking_window = document.getElementById('block-08');
+    booking_window.addEventListener('click', orderBubble);
+    let close_booking_window = document.getElementById('block-08__close-booking-window');
+    close_booking_window.onclick = function () {
         booking_window.style.display = 'none'
-        cons()
-        // places[el - 1].booking = true;
-        // console.log(places);
     }
-}
 
-// let el;
-function order(e) {
-    let el = e.target.innerHTML;
-    if (places[el - 1].booking == true) {
-        alert('Место занято!');
+    let button_book = document.getElementById('block-08__book');
+    //parent_book = button_book.parentNode;
+    let booking_container = document.querySelector('#block-08__booking-window');
+    let places_div = document.createElement('div');
+    places_div.classList.add("block-08__places");
+    let first_input = booking_container.getElementsByTagName('input')[0];
+    let first_input_div = first_input.parentNode;
+    //console.log(first_input)
+    booking_container.insertBefore(places_div, first_input_div);
+
+
+    for (place of places) {
+        let place_div = document.createElement('div');
+        //place_div.addEventListener('click', order);
+        place_div.addEventListener('click', placeToggle);
+        place_div.addEventListener('contextmenu', placeContext);
+        place_div.addEventListener('mousemove', placeHover);
+        place_div.addEventListener('mouseout', placeHoverOut);
+        place_div.innerHTML = place.number;
+        place_div.classList.add("block-08__place_div")
+
+        if (place.booking) {
+            place_div.classList.toggle("block-08__place_booked");
+        }
+        // else {
+        //     place_div.classList.add("block-08__place_free");
+        // }
+        places_div.append(place_div)
     }
-    else {
-        let chosen_place = document.getElementById('block-08__chosen_place');
-        chosen_place.value = el;
-        let booking_film_price2 = document.getElementById('block-08__film-price2');
-        booking_film_price2.innerHTML = places[el - 1].price;
-        places[el - 1].booking = true;
-        console.log(places);
+
+    let inp = document.querySelector('#block-08__client-phone');
+
+    button_book.onclick = function () {
+        let booking_client_name = document.getElementById('block-08__client-name');
+        let booking_client_phone = document.getElementById('block-08__client-phone');
+
+        // Плагин для проверки номера телефона
+        inp.addEventListener('focus', _ => {
+            // Если там ничего нет или есть, но левое
+            if (!/^\+\d*$/.test(inp.value))
+                // То вставляем знак плюса как значение
+                inp.value = '+';
+        });
+        inp.addEventListener('keypress', e => {
+            // Отменяем ввод не цифр
+            if (!/\d/.test(e.key))
+                e.preventDefault();
+        });
+
+        if (booking_client_name.value) {
+            booking_client_name.style.border = '0.1rem solid #bebebe'
+        } else {
+            booking_client_name.style.border = '0.1rem solid red'
+        }
+
+        if (booking_client_phone.value.length == 13) {
+            booking_client_phone.style.border = '0.1rem solid #bebebe'
+        } else {
+            booking_client_phone.style.border = '0.1rem solid red'
+        }
+        if (booking_client_phone.value.length == 13 && booking_client_name.value) {
+            booking_window.style.display = 'none'
+            cons()
+        }
     }
-}
-function placeToggle(e) {
-    e.target.classList.remove("block-08__place_free");
-    e.target.classList.add("block-08__place_booked");
-}
-function placeContext(event) {
-    event.preventDefault()
-    let pc = event.target.innerHTML
-    alert(places[pc - 1].price)
-}
-function placeHover(e) {
-    e.target.classList.add("block-08__place_hover");
-}
-function placeHoverOut(e) {
-    e.target.classList.remove("block-08__place_hover");
-}
 
-//Вставка фильмов в прокате в таблице блока 3
-for (let i = 0; i < films_hire.length; i++) {
-    const film_name = film.getName.bind(films_hire[i])()
-    const film_start = film.getStart.bind(films_hire[i])()
-    const film_genre = film.getGenre.bind(films_hire[i])()
-    const film_price = film.getPrice.bind(films_hire[i])()
-    let films_hireHTML = document.getElementById('films_hire')
+    //Функции, обрабатывающие окно бронирования билетов
+    function order(e) {
+        let el = e.target.innerHTML;
+        if (places[el - 1].booking == true) {
+            alert('Место занято!');
+        }
+        else {
+            let chosen_place = document.getElementById('block-08__chosen_place');
+            chosen_place.value = el;
+            let booking_film_price2 = document.getElementById('block-08__film-price2');
+            booking_film_price2.innerHTML = places[el - 1].price;
+            places[el - 1].booking = true;
+            //console.log(places);
+        }
+    }
+    function orderBubble(e) {
+        if (e.target.classList.contains("block-08__place_div") == true) {
+            order(e);
+        }
+    }
+    function placeToggle(e) {
+        //e.target.classList.remove("block-08__place_free");
+        e.target.classList.toggle("block-08__place_booked");
+    }
+    function placeContext(event) {
+        event.preventDefault();
+        let pc = event.target.innerHTML;
+        alert(places[pc - 1].price);
+    }
+    function placeHover(e) {
+        e.target.classList.add("block-08__place_hover");
+    }
+    function placeHoverOut(e) {
+        e.target.classList.remove("block-08__place_hover");
+    }
 
-    let film_HTML = `
+    //Вставка фильмов в прокате в таблице блока 3
+    for (let i = 0; i < films_hire.length; i++) {
+        const film_name = film.getName.bind(films_hire[i])()
+        const film_start = film.getStart.bind(films_hire[i])()
+        const film_genre = film.getGenre.bind(films_hire[i])()
+        const film_price = film.getPrice.bind(films_hire[i])()
+        let films_hireHTML = document.getElementById('films_hire')
+
+        let film_HTML = `
         <td id="start_film_${i}" class="block-03__table_centr">${film_start}</td>
         <td id="name_film_${i}">${film_name}</td>
         <td id="genre_film_${i}">${film_genre}</td>
@@ -458,42 +470,42 @@ for (let i = 0; i < films_hire.length; i++) {
         </td>
         `
 
-    let tr = document.createElement("tr")
-    tr.innerHTML = film_HTML
-    films_hireHTML.appendChild(tr)
+        let tr = document.createElement("tr")
+        tr.innerHTML = film_HTML
+        films_hireHTML.appendChild(tr)
 
-    tr.onclick = function () {
-        booking_window.style.display = 'block'
+        tr.onclick = function () {
+            booking_window.style.display = 'block'
 
-        let booking_film_name = document.getElementById('block-08__film-name');
-        let booking_film_start = document.getElementById('block-08__film-start');
-        let booking_film_genre = document.getElementById('block-08__film-genre');
-        let booking_film_price = document.getElementById('block-08__film-price');
+            let booking_film_name = document.getElementById('block-08__film-name');
+            let booking_film_start = document.getElementById('block-08__film-start');
+            let booking_film_genre = document.getElementById('block-08__film-genre');
+            let booking_film_price = document.getElementById('block-08__film-price');
 
-        booking_film_name.innerHTML = film_name
-        booking_film_start.innerHTML = film_start
-        booking_film_genre.innerHTML = film_genre
-        booking_film_price.innerHTML = film_price
+            booking_film_name.innerHTML = film_name
+            booking_film_start.innerHTML = film_start
+            booking_film_genre.innerHTML = film_genre
+            booking_film_price.innerHTML = film_price
 
-        // let booking_film_value = document.getElementById('block-08__film-value');
-        // let booking_total_price = document.getElementById('block-08__total-price');
+            // let booking_film_value = document.getElementById('block-08__film-value');
+            // let booking_total_price = document.getElementById('block-08__total-price');
 
-        // booking_total_price.innerHTML = film_price * booking_film_value.value;
+            // booking_total_price.innerHTML = film_price * booking_film_value.value;
 
-        // booking_film_value.onchange = function () {
-        //     booking_total_price.innerHTML = film_price * booking_film_value.value
-        //}
-    }
+            // booking_film_value.onchange = function () {
+            //     booking_total_price.innerHTML = film_price * booking_film_value.value
+            //}
+        }
 
-    //Вывод заказа (запуск ниже)
-    function cons() {
-        console.group('Ваш заказ:')
-        console.log(film_name)
-        console.log(film_start)
-        console.groupEnd
+        //Вывод заказа (запуск ниже)
+        function cons() {
+            console.group('Ваш заказ:')
+            console.log(film_name)
+            console.log(film_start)
+            console.groupEnd
+        }
     }
 }
-
 
 
 
