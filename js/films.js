@@ -356,7 +356,7 @@ window.onload = function () {    //Скорее всего, это не очен
     let first_input_div = first_input.parentNode;
     //console.log(first_input)
     booking_container.insertBefore(places_div, first_input_div);
-
+    //$(booking_container).insertAfter(places_div, first_input_div);
 
     for (place of places) {
         let place_div = document.createElement('div');
