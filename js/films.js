@@ -72,6 +72,49 @@ window.onload = function () {    //Скорее всего, это не очен
 
     ]
 
+    //Определение города
+    /*
+        const SYPEX_URL = 'https://api.sypexgeo.net/json/';
+            //CITIES_URL = 'http://glavpunkt.ru/api/get_rf_cities';
+    
+        //let cities;
+    
+        //@param {*} api_url - адрес запроса
+         
+        function getRequest(api_url, callback) {
+            let xhr = new XMLHttpRequest(),
+                async = true;
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    callback.call(xhr.responseText)
+                }
+            }
+            xhr.open('GET', api_url, async);
+            xhr.send();
+            if (xhr.status != 200) {
+                return (xhr.status + ': ' + xhr.statusText)
+            }
+        }
+        $(document).ready(($) => {
+            getRequest(SYPEX_URL, function(){
+                let answer = $.parseJSON(this);
+                let city = answer['city']['name_ru'];
+                //console.log(city);
+                $('#block-01__city').html(city);
+            });        
+        });
+    */
+
+    $.ajax({
+        url: 'https://api.sypexgeo.net/json/',        // указываем URL и
+        dataType: "json",                             // тип загружаемых данных
+        success: function (data) {        // вешаем свой обработчик на функцию success
+            //console.log(data['city']['name_ru'])
+            $('#block-01__city').html(data['city']['name_ru']);
+        }
+    });
+
+
     //Создание массива с местами
     let places = [];
     const get_place = function ([number, price, booking]) {
