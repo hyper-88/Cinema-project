@@ -72,39 +72,6 @@ window.onload = function () {    //Скорее всего, это не очен
 
     ]
 
-    //Определение города
-    /*
-        const SYPEX_URL = 'https://api.sypexgeo.net/json/';
-            //CITIES_URL = 'http://glavpunkt.ru/api/get_rf_cities';
-    
-        //let cities;
-    
-        //@param {*} api_url - адрес запроса
-         
-        function getRequest(api_url, callback) {
-            let xhr = new XMLHttpRequest(),
-                async = true;
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    callback.call(xhr.responseText)
-                }
-            }
-            xhr.open('GET', api_url, async);
-            xhr.send();
-            if (xhr.status != 200) {
-                return (xhr.status + ': ' + xhr.statusText)
-            }
-        }
-        $(document).ready(($) => {
-            getRequest(SYPEX_URL, function(){
-                let answer = $.parseJSON(this);
-                let city = answer['city']['name_ru'];
-                //console.log(city);
-                $('#block-01__city').html(city);
-            });        
-        });
-    */
-
     $.ajax({
         url: 'https://api.sypexgeo.net/json/',        // указываем URL и
         dataType: "json",                             // тип загружаемых данных
@@ -114,7 +81,48 @@ window.onload = function () {    //Скорее всего, это не очен
         }
     });
 
-
+    let cities;
+    jQuery(($) => {
+        $('#block-01__city').on('click', function () {
+            $('#block-09').css('display', 'block');
+            if (!cities) {
+                $.ajax({
+                    url: 'http://glavpunkt.ru/api/get_rf_cities',
+                    dataType: "json",
+                    success: function (data_cities) {
+                        cities = data_cities
+                        //console.log(cities)
+                    }
+                });
+            }
+        });
+        $('body').on('input keyup', 'input[name=city_choose]', function () {
+            let search = $(this).val(),
+                counter = 0;
+            //console.log(cities)
+            let html = '<ul>';
+            for (let i = 0; i < cities.length; i++) {
+                if (cities[i].name.toLowerCase().indexOf(search.toLowerCase()) >= 0 && counter < 5) {
+                    html += '<li data-city="' + cities[i].name + '">' + cities[i].name + ' (' + cities[i].area + ')</li>';
+                    counter++;
+                }
+            }
+            html += '</ul>';
+            $('#block-09__search_result').html(html);
+        });
+        $('body').on('click', '#block-09__search_result li', function () {
+            $('#block-01__city').html($(this).data('city'));
+            $('#block-09').css('display', 'none');
+        })
+        $(document).on('click', function (e) {
+            let block01 = $("#block-01__city");
+            let block09 = $("#block-09");
+            if (!block09.is(e.target) && !block01.is(e.target) && block09.has(e.target).length === 0) {
+                $('#block-09').css('display', 'none');
+            }
+        });
+    })
+    
     //Создание массива с местами
     let places = [];
     const get_place = function ([number, price, booking]) {

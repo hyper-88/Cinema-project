@@ -917,3 +917,24 @@ a:visited {
 .block-08__place_hover{
     background: gray;
 }
+
+#block-09 {
+    display: none;
+    position: absolute;
+    width: 25%;
+    height: 31vh;
+    background: rgba(0, 0, 0, 0.9);
+    top: 5rem;
+    right: 20rem;
+   border-radius: 1rem;
+   padding: 1.5rem;
+}
+
+.block-09__city_title,
+#block-09__search_result {
+    color: rgb(255, 255, 255);
+    padding-bottom: 1rem;
+}
+#block-09__city-name {
+    width: 23rem;
+}
