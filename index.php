@@ -348,23 +348,28 @@
     <!-- ВСПЛЫВАЮЩИЕ ОКНА -->
     <!-- Форма получения подарка -->
     <div id="block-07">
-        <div id="block-07__present-window">
-            <button id="block-07__close-present-window">X</button>
-            <div>
-                <input id="block-07__client-name" placeholder="Введите имя">
+        <form method="POST" action="serv.php">
+            <div id="block-07__present-window">
+                <button id="block-07__close-present-window">X</button>
+                <div>
+                    <input name="name" id="block-07__client-name" placeholder="Введите имя">
+                    <?php if(isset($_GET['error_name']) && $_GET['error_name']) { ?>
+                        <p><?php echo $_GET['error_name']?></p>
+                    <?php } ?>
+                </div>
+                <div>
+                    <select name="present" id="block-07__type-of-present">
+                        <option value="0">Выберете подарок</option>
+                        <option value="1">Подарок 1</option>
+                        <option value="2">Подарок 2</option>
+                        <option value="3">Подарок 3</option>
+                    </select>
+                </div>
+                <div>
+                    <button name="submit" id="block-07__get-present" class="button" type="submit">Получить</button>
+                </div>
             </div>
-            <div>
-                <select id="block-07__type-of-present">
-                    <option value="0">Выберете подарок</option>
-                    <option value="1">Подарок 1</option>
-                    <option value="2">Подарок 2</option>
-                    <option value="3">Подарок 3</option>
-                </select>
-            </div>
-            <div>
-                <button id="block-07__get-present" class="button" type="submit">Получить</button>
-            </div>
-        </div>
+        </form> 
     </div>
 
     <!-- Форма заказа билета -->
@@ -388,15 +393,6 @@
                 <span id="block-08__film-price">0</span>
                 <span>руб.</span>
             </div>
-            <!-- <div>
-                <div>Количество билетов:</div>
-                <input type="number" min="1" max="50" value="1" step="1" id="block-08__film-value">
-            </div>
-            <div class="block-08__total">
-                <span>Итого:</span>
-                <span id="block-08__total-price">0</span>
-                <span>руб.</span>
-            </div> -->
             <div>Выбранное место:</div>
             <div>
                 <input type="text" name="place" id="block-08__chosen_place" placeholder="Выбранное место">
