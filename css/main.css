@@ -844,7 +844,8 @@ a:visited {
     cursor: pointer;
 }
 
-#block-07__client-name {
+#block-07__client-name,
+#block-07__client-phone {
     width: 20.8rem;
 }
 

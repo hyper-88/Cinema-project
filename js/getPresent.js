@@ -14,9 +14,9 @@ close_present_window.onclick = function () {
 button_get.onclick = function () {
     let client_name = document.getElementById('block-07__client-name');
     let type_of_present = document.getElementById('block-07__type-of-present');
-
+    
     if (client_name.value) {
-        console.log('client_name', client_name.value)
+        //console.log('client_name', client_name.value)
         client_name.style.border = '0.1rem solid #bebebe'
     }
     else {
@@ -24,7 +24,7 @@ button_get.onclick = function () {
     }
 
     if (type_of_present.value != 0) {
-        console.log('type_of_present', type_of_present.value)
+        //console.log('type_of_present', type_of_present.value)
         type_of_present.style.border = '0.1rem solid #bebebe'
     }
     else{
@@ -38,9 +38,9 @@ button_get.onclick = function () {
 
 let client_name = document.getElementById('block-07__client-name')
 client_name.onchange = function(){
-    console.log('до нажатия кнопки client_name', client_name.value)
+    //console.log('до нажатия кнопки client_name', client_name.value)
 }
 let type_of_present = document.getElementById('block-07__type-of-present');
 type_of_present.onchange = function(){
-    console.log('до нажатия кнопки type_of_present', type_of_present.value)
+    //console.log('до нажатия кнопки type_of_present', type_of_present.value)
 }

@@ -350,9 +350,9 @@
     <div id="block-07">
         <form method="POST" action="serv.php">
             <div id="block-07__present-window">
-                <button id="block-07__close-present-window">X</button>
+                <button type="button" id="block-07__close-present-window">X</button>
                 <div>
-                    <input name="name" id="block-07__client-name" placeholder="Введите имя">
+                    <input name="name" id="block-07__client-name" placeholder="Введите имя" value="<?php echo isset($_COOKIE['name']) ? $_COOKIE['name'] : '' ?>">
                     <?php if(isset($_GET['error_name']) && $_GET['error_name']) { ?>
                         <p><?php echo $_GET['error_name']?></p>
                     <?php } ?>

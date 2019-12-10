@@ -1,4 +1,5 @@
-window.onload = function () {    //Скорее всего, это не очень корректно
+window.onload = function () {    
+    console.log('cookie', document.cookie);
     const genres = [
         'фантастика',
         'боевик',       //1
