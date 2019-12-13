@@ -7,6 +7,10 @@ if(validateCookie($_COOKIE)){
         $client = new UserData;
         $client->saveData($_POST);
         $_SESSION['name'] = $_POST['name'];
+        if(!(isset($_SESSION['id'])) || !($_SESSION['id'] === $_POST['id'])){
+            $_SESSION['id'] = $_POST['id'];
+        }
+        
         setcookie('name', $_POST['name'], time() + 60*60*24*30);
 
         header('location: /thanks.php?name=' . $_POST['name']);
@@ -32,10 +36,12 @@ function validateName($data)
 class UserData
 {
     public $name;
-
+    public $id;
+    
     public function saveData($data)
     {
         $this->name = $data['name'];
+        $this->id = $data['id'];
     }
         
 }
