@@ -1,4 +1,4 @@
-window.onload = function () {    
+window.onload = function () {
     //console.log('cookie', document.cookie);
     const genres = [
         'фантастика',
@@ -123,7 +123,7 @@ window.onload = function () {
             }
         });
     })
-    
+
     //Создание массива с местами
     let places = [];
     const get_place = function ([number, price, booking]) {
@@ -146,7 +146,6 @@ window.onload = function () {
         places[i] = get_place([n, p, b])
     }
     //console.log(places);
-
 
     let films_hire = [];
     let films_new = [];
@@ -466,19 +465,29 @@ window.onload = function () {
     }
 
     //Функции, обрабатывающие окно бронирования билетов
+    let num_of_places = [];
+    let sum_of_prices = 0;
     function order(e) {
         let el = e.target.innerHTML;
+        let chosen_place = document.getElementById('block-08__chosen_place');
+        let booking_film_price2 = document.getElementById('block-08__film-price2');
         if (places[el - 1].booking == true) {
             alert('Место занято!');
+            //console.log();
         }
-        else {
-            let chosen_place = document.getElementById('block-08__chosen_place');
-            chosen_place.value = el;
-            let booking_film_price2 = document.getElementById('block-08__film-price2');
-            booking_film_price2.innerHTML = places[el - 1].price;
-            places[el - 1].booking = true;
-            //console.log(places);
+        else if (typeof num_of_places[el - 1] == "undefined") {
+
+            num_of_places[el - 1] = places[el - 1].number;
+            chosen_place.value = num_of_places.filter(num => num !== "undefined");
+            sum_of_prices = sum_of_prices + Number(places[el - 1].price);
         }
+        else if (typeof num_of_places[el - 1] !== "undefined") {
+            delete num_of_places[el - 1];
+            chosen_place.value = num_of_places.filter(num => num !== "undefined");
+            sum_of_prices = sum_of_prices - Number(places[el - 1].price);
+        }
+        booking_film_price2.innerHTML = sum_of_prices;
+        //console.log(sum_of_prices);
     }
     function orderBubble(e) {
         if (e.target.classList.contains("block-08__place_div") == true) {
@@ -486,8 +495,10 @@ window.onload = function () {
         }
     }
     function placeToggle(e) {
-        //e.target.classList.remove("block-08__place_free");
-        e.target.classList.toggle("block-08__place_booked");
+        let el = e.target.innerHTML;
+        if (places[el - 1].booking !== true) {
+            e.target.classList.toggle("block-08__place_booked");
+        }
     }
     function placeContext(event) {
         event.preventDefault();
