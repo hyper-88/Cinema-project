@@ -28,7 +28,7 @@
         $id = time();
     }
     ?>
-    <p><?php var_dump($_SESSION['id'],$id) ?></p>
+    <!-- <p><?php var_dump($_SESSION['id'],$id) ?></p> -->
     <!-- ШАПКА -->
     <div class="block-01">
         <header>

@@ -387,6 +387,7 @@ a:visited {
 
 .block-02__image-wrap img {
     width: 100%;
+    transition: 0.3s
 }
 
 .block-02__image-wrap img:hover {
